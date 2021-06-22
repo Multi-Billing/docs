@@ -1,0 +1,705 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Настройка модуля MBRadius &mdash; документация Multi-BiLLing 0.1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx_charts/charts.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_SVG"></script>
+        <script src="../../../_static/sphinx_charts/plotly-1.55.1/plotly-1.55.1.min.js"></script>
+        <script src="../../../_static/sphinx_charts/charts.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" />
+    <link rel="next" title="Лицензия" href="../../license.html" />
+    <link rel="prev" title="Настройка" href="../toc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Multi-BiLLing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../requirements.html">Требования к серверу</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/toc.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faststart.html">Быстрый старт</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../structure/toc.html">Структура биллинга</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../toc.html">Настройка</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Настройка модуля MBRadius</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">Лицензия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updates.html">Обновления</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Multi-BiLLing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../toc.html">Настройка</a> &raquo;</li>
+        
+      <li>Настройка модуля MBRadius</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/docs/info/settings/mbradius.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mbradius">
+<h1>Настройка модуля MBRadius<a class="headerlink" href="#mbradius" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Посмотрим на конфигурацию radius (<strong>radiusd.conf</strong>)</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<button>Show/Hide Config</button></div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="nv">prefix</span> <span class="o">=</span> /usr
+  <span class="nv">exec_prefix</span> <span class="o">=</span> /usr
+  <span class="nv">sysconfdir</span> <span class="o">=</span> /etc
+  <span class="nv">localstatedir</span> <span class="o">=</span> /var
+  <span class="nv">sbindir</span> <span class="o">=</span> /usr/sbin
+  <span class="nv">logdir</span> <span class="o">=</span> <span class="si">${</span><span class="nv">localstatedir</span><span class="si">}</span>/log/radius
+  <span class="nv">raddbdir</span> <span class="o">=</span> <span class="si">${</span><span class="nv">sysconfdir</span><span class="si">}</span>/raddb
+  <span class="nv">radacctdir</span> <span class="o">=</span> <span class="si">${</span><span class="nv">logdir</span><span class="si">}</span>/radacct
+  <span class="nv">name</span> <span class="o">=</span> radiusd
+  <span class="nv">confdir</span> <span class="o">=</span> <span class="si">${</span><span class="nv">raddbdir</span><span class="si">}</span>
+  <span class="nv">run_dir</span> <span class="o">=</span> <span class="si">${</span><span class="nv">localstatedir</span><span class="si">}</span>/run/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>
+  <span class="nv">db_dir</span> <span class="o">=</span> <span class="si">${</span><span class="nv">raddbdir</span><span class="si">}</span>
+  <span class="nv">libdir</span> <span class="o">=</span> /usr/lib/freeradius
+  <span class="nv">pidfile</span> <span class="o">=</span> <span class="si">${</span><span class="nv">run_dir</span><span class="si">}</span>/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>.pid
+
+<span class="hll">  <span class="nv">max_request_time</span> <span class="o">=</span> <span class="m">9</span>
+</span><span class="hll">  <span class="nv">cleanup_delay</span> <span class="o">=</span> <span class="m">10</span>
+</span><span class="hll">  <span class="nv">max_requests</span> <span class="o">=</span> <span class="m">2097152</span>
+</span>
+  listen <span class="o">{</span>
+      <span class="nb">type</span> <span class="o">=</span> auth
+      <span class="nv">ipaddr</span> <span class="o">=</span> *
+      <span class="nv">port</span> <span class="o">=</span> <span class="m">0</span>
+  <span class="o">}</span>
+
+  listen <span class="o">{</span>
+      <span class="nv">ipaddr</span> <span class="o">=</span> *
+      <span class="nv">port</span> <span class="o">=</span> <span class="m">0</span>
+      <span class="nb">type</span> <span class="o">=</span> acct
+  <span class="o">}</span>
+
+  <span class="nv">hostname_lookups</span> <span class="o">=</span> no
+  <span class="nv">regular_expressions</span>     <span class="o">=</span> yes
+  <span class="nv">extended_expressions</span>    <span class="o">=</span> yes
+
+  log <span class="o">{</span>
+      <span class="nv">destination</span> <span class="o">=</span> files
+      <span class="nv">file</span> <span class="o">=</span> <span class="si">${</span><span class="nv">logdir</span><span class="si">}</span>/radius.log
+      <span class="c1">#requests = ${logdir}/radiusd-%{%{Virtual-Server}:-DEFAULT}-%Y%m%d.log</span>
+      <span class="nv">syslog_facility</span> <span class="o">=</span> daemon
+      <span class="nv">stripped_names</span> <span class="o">=</span> no
+      <span class="nv">auth</span> <span class="o">=</span> no
+      <span class="nv">auth_badpass</span> <span class="o">=</span> no
+      <span class="nv">auth_goodpass</span> <span class="o">=</span> no
+  <span class="o">}</span>
+
+  <span class="nv">checkrad</span> <span class="o">=</span> <span class="si">${</span><span class="nv">sbindir</span><span class="si">}</span>/checkrad
+
+  security <span class="o">{</span>
+      <span class="nv">max_attributes</span> <span class="o">=</span> <span class="m">3000</span>
+      <span class="nv">reject_delay</span> <span class="o">=</span> <span class="m">0</span>
+      <span class="nv">status_server</span> <span class="o">=</span> yes
+  <span class="o">}</span>
+
+  <span class="nv">proxy_requests</span>  <span class="o">=</span> off
+
+  thread pool <span class="o">{</span>
+<span class="hll">      <span class="nv">start_servers</span> <span class="o">=</span> <span class="m">8</span>
+</span><span class="hll">      <span class="nv">max_servers</span> <span class="o">=</span> <span class="m">12</span>
+</span><span class="hll">      <span class="nv">min_spare_servers</span> <span class="o">=</span> <span class="m">1</span>
+</span><span class="hll">      <span class="nv">max_spare_servers</span> <span class="o">=</span> <span class="m">1</span>
+</span><span class="hll">      <span class="nv">max_requests_per_server</span> <span class="o">=</span> <span class="m">0</span>
+</span><span class="hll">      <span class="nv">max_queue_size</span> <span class="o">=</span> <span class="m">1048576</span>
+</span>      <span class="nv">auto_limit_acct</span> <span class="o">=</span> no
+  <span class="o">}</span>
+
+  modules <span class="o">{</span>
+      <span class="nv">$INCLUDE</span> <span class="si">${</span><span class="nv">confdir</span><span class="si">}</span>/modules/
+      <span class="nv">$INCLUDE</span> sql.conf
+  <span class="o">}</span>
+
+  instantiate <span class="o">{</span>
+      expr
+  <span class="o">}</span>
+
+  <span class="nv">$INCLUDE</span> sites-enabled/
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>нас интересуют отдельные строки</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">max_request_time</span> <span class="o">=</span> <span class="m">9</span>
+<span class="nv">cleanup_delay</span> <span class="o">=</span> <span class="m">10</span>
+<span class="nv">max_requests</span> <span class="o">=</span> <span class="m">2097152</span>
+
+...
+
+thread pool <span class="o">{</span>
+    <span class="nv">start_servers</span> <span class="o">=</span> <span class="m">8</span>
+    <span class="nv">max_servers</span> <span class="o">=</span> <span class="m">12</span>
+    <span class="nv">min_spare_servers</span> <span class="o">=</span> <span class="m">1</span>
+    <span class="nv">max_spare_servers</span> <span class="o">=</span> <span class="m">1</span>
+    <span class="nv">max_requests_per_server</span> <span class="o">=</span> <span class="m">0</span>
+    <span class="nv">max_queue_size</span> <span class="o">=</span> <span class="m">1048576</span>
+    <span class="nv">auto_limit_acct</span> <span class="o">=</span> no
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Рассмотрим эти параметры:</p>
+<dl class="glossary simple">
+<dt id="term-max_request_time">max_request_time<a class="headerlink" href="#term-max_request_time" title="Permalink to this term">¶</a></dt><dd><p>Максимально время за которое модуль mbkerenl должно обработать запрос и вернуть результат</p>
+</dd>
+<dt id="term-cleanup_delay">cleanup_delay<a class="headerlink" href="#term-cleanup_delay" title="Permalink to this term">¶</a></dt><dd><p>После получения результата, радиус будет хранить этот «результат» у себя в памяти на случай если результат не дойдет до BRAS сервера и BRAS заново отправит запрос.</p>
+</dd>
+<dt id="term-max_requests">max_requests<a class="headerlink" href="#term-max_requests" title="Permalink to this term">¶</a></dt><dd><p>Размер того самого хранилища для результатов, которые радиус будет хранить в памяти пока не очистит</p>
+</dd>
+<dt id="term-start_servers">start_servers<a class="headerlink" href="#term-start_servers" title="Permalink to this term">¶</a></dt><dd><p>Начальное кол-во потоков которое будет запущено для обработки запросов авторизации</p>
+</dd>
+<dt id="term-max_servers">max_servers<a class="headerlink" href="#term-max_servers" title="Permalink to this term">¶</a></dt><dd><p>Максимальное кол-во потоков которое будет запущено для обработки запросов авторизации</p>
+</dd>
+<dt id="term-min_spare_servers">min_spare_servers<a class="headerlink" href="#term-min_spare_servers" title="Permalink to this term">¶</a></dt><dd><p>Не используется в нашем модуле</p>
+</dd>
+<dt id="term-max_spare_servers">max_spare_servers<a class="headerlink" href="#term-max_spare_servers" title="Permalink to this term">¶</a></dt><dd><p>Не используется в нашем модуле</p>
+</dd>
+<dt id="term-max_requests_per_server">max_requests_per_server<a class="headerlink" href="#term-max_requests_per_server" title="Permalink to this term">¶</a></dt><dd><p>Максимальное кол-во запросов которое может обработать один поток, после чего он будет перезапущен ( 0 - без ограничения )</p>
+</dd>
+<dt id="term-max_queue_size">max_queue_size<a class="headerlink" href="#term-max_queue_size" title="Permalink to this term">¶</a></dt><dd><p>Размер очереди для запросов авторизации</p>
+</dd>
+<dt id="term-auto_limit_acct">auto_limit_acct<a class="headerlink" href="#term-auto_limit_acct" title="Permalink to this term">¶</a></dt><dd><p>Ограничение accounting запросов</p>
+</dd>
+</dl>
+<p>Теперь посмотрим на изображение ниже</p>
+<img alt="../../../_images/radius_threads.png" src="../../../_images/radius_threads.png" />
+<p>Все полученные запросы радиус помещает в «Radius queue» размер которого зависит от параметра <strong>max_queue_size</strong>,
+далее из очереди запросы передаются через потоки к модулю <a class="reference internal" href="../../structure/mbkernel.html"><span class="doc">mbKernel</span></a>,
+в свою очередь модуль mbKernel создает соединение с базой на каждый поток радиуса.</p>
+<div class="section" id="id1">
+<h2><strong>Как подобрать параметры</strong><a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[pps / 20 = threads\]</div>
+<p>1 поток способен обработать до 20-25 запросов в секунду (тесты ниже).
+mbKernel автоматически создает дочерний процесс под каждый поток радиуса, по этому на каждом радиус сервере нужно высчитывать его <abbr title="packets/s">pps</abbr> запросов.</p>
+<p>Узнать <abbr title="packets/s">pps</abbr> можно с помощью <code class="docutils literal notranslate"><span class="pre">tcpdump</span></code> и <code class="docutils literal notranslate"><span class="pre">capinfos</span></code>:</p>
+<div class="section" id="id2">
+<h3><strong>Установка софта</strong><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">capinfos</span></code> доступен из пакета <code class="docutils literal notranslate"><span class="pre">wireshark</span></code> по этому для установки выполним</p>
+<p>Для Centos:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf install tcpdump wireshark
+</pre></div>
+</div>
+<p>Для Debian:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get install tcpdump wireshark
+</pre></div>
+</div>
+</div>
+<div class="section" id="pps">
+<h3><strong>Определение pps</strong><a class="headerlink" href="#pps" title="Ссылка на этот заголовок">¶</a></h3>
+<p>После установки нужно запустить <code class="docutils literal notranslate"><span class="pre">tcpdump</span></code> на принимающем radius запросы интерфейсе с записью в файл</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tcpdump -i eth1 port <span class="m">1812</span> -w /tmp/radius_pps.pcap
+</pre></div>
+</div>
+<p>Для записи будет достаточно 5-10 минут (что бы успел пройти accounting интервал)</p>
+<p>После чего можно посмотреть информацию о записи, выполнив:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>capinfos /tmp/radius_pps.pcap
+</pre></div>
+</div>
+<p>В результате будет показана информация:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>File name:           /tmp/radius_pps.pcap
+File type:           Wireshark/tcpdump/... - pcap
+File encapsulation:  Ethernet
+File timestamp precision:  microseconds <span class="o">(</span><span class="m">6</span><span class="o">)</span>
+Packet size limit:   file hdr: <span class="m">262144</span> bytes
+Number of packets:   <span class="m">985</span>
+File size:           <span class="m">118</span> kB
+Data size:           <span class="m">102</span> kB
+Capture duration:    <span class="m">8</span>.437724 seconds
+First packet time:   <span class="m">2021</span>-06-18 <span class="m">18</span>:07:35.578060
+Last packet time:    <span class="m">2021</span>-06-18 <span class="m">18</span>:07:44.015784
+Data byte rate:      <span class="m">12</span> kBps
+Data bit rate:       <span class="m">97</span> kbps
+Average packet size: <span class="m">103</span>.89 bytes
+<span class="hll">Average packet rate: <span class="m">116</span> packets/s
+</span>SHA256:              ef76dc37e0b4bb74f07ee66305fb9c170a064514ad84342ad134271264af319c
+RIPEMD160:           a1b65b2b63c883ea1a0d862a665044ee8b1666c9
+SHA1:                3782a747440f95a55580b41b40b6f8d78ec5be86
+Strict <span class="nb">time</span> order:   True
+Number of interfaces <span class="k">in</span> file: <span class="m">1</span>
+Interface <span class="c1">#0 info:</span>
+               <span class="nv">Encapsulation</span> <span class="o">=</span> Ethernet <span class="o">(</span><span class="m">1</span> - ether<span class="o">)</span>
+               Capture <span class="nv">length</span> <span class="o">=</span> <span class="m">262144</span>
+               Time <span class="nv">precision</span> <span class="o">=</span> microseconds <span class="o">(</span><span class="m">6</span><span class="o">)</span>
+               Time ticks per <span class="nv">second</span> <span class="o">=</span> <span class="m">1000000</span>
+               Number of stat <span class="nv">entries</span> <span class="o">=</span> <span class="m">0</span>
+               Number of <span class="nv">packets</span> <span class="o">=</span> <span class="m">985</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><strong>Тесты</strong><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">Конфигурация сервера на котром проводились тесты</span><a class="headerlink" href="#id9" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Дата выпуска</p></th>
+<th class="head"><p>Q1 2012</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CPU</p></td>
+<td><p>2х Intel(R) Xeon(R) CPU E5-2650 0 &#64; 2.00GHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cores</p></td>
+<td><p>x16</p></td>
+</tr>
+<tr class="row-even"><td><p>RAM</p></td>
+<td><p>DDR3 16gb</p></td>
+</tr>
+<tr class="row-odd"><td><p>SSD</p></td>
+<td><p>SAMSUNG MZ7KM480HAHP-0E005</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id4">
+<h3><strong>Тест 1: влияние кол-ва потоков радиуса</strong><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h3>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">Параметры теста</span><a class="headerlink" href="#id10" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Radperf</p></th>
+<th class="head"><p>200 потоков</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Кол-во запросов авторизации</p></td>
+<td><p>10000</p></td>
+</tr>
+</tbody>
+</table>
+<p>Посмотрим график производительности модуля mbKernel</p>
+<div class="sphinx-charts docutils container" id="id11">
+<div class="sphinx-charts-chart sphinx-charts-chart-id-0 sphinx-charts-chart-uri-../../../_charts/docs/charts/radius_threads_1.json sphinx-charts-chart-dn-chart docutils container" id="sphinx-charts-chart-id-0">
+</div>
+<p class="sphinx-charts-hidden"></p>
+<div class="sphinx-charts-placeholder sphinx-charts-placeholder-0 docutils container" id="id12">
+<p class="caption"><span class="caption-text">Loading…</span></p>
+</div>
+<p class="caption"><span class="caption-text">Влияние потоков на производительность</span></p>
+</div>
+<div class="sphinx-charts docutils container" id="id13">
+<div class="sphinx-charts-chart sphinx-charts-chart-id-1 sphinx-charts-chart-uri-../../../_charts/docs/charts/radius_queue_1.json sphinx-charts-chart-dn-chart docutils container" id="sphinx-charts-chart-id-1">
+</div>
+<p class="sphinx-charts-hidden"></p>
+<div class="sphinx-charts-placeholder sphinx-charts-placeholder-1 docutils container" id="id14">
+<p class="caption"><span class="caption-text">Loading…</span></p>
+</div>
+<p class="caption"><span class="caption-text">Влияние потоков на время обработки всех запросов</span></p>
+</div>
+<p>Как видно на графике, повышение кол-ва потоков увеличивает производительность и сокращается время требуемое на обработки всех запросов</p>
+<p>Давайте посмотрим что поисходит с временем затраченным на обработку одного запроса</p>
+<div class="sphinx-charts docutils container" id="id15">
+<div class="sphinx-charts-chart sphinx-charts-chart-id-2 sphinx-charts-chart-uri-../../../_charts/docs/charts/radius_timings_1.json sphinx-charts-chart-dn-chart docutils container" id="sphinx-charts-chart-id-2">
+</div>
+<p class="sphinx-charts-hidden"></p>
+<div class="sphinx-charts-placeholder sphinx-charts-placeholder-2 docutils container" id="id16">
+<p class="caption"><span class="caption-text">Loading…</span></p>
+</div>
+<p class="caption"><span class="caption-text">Влияние потоков на время обработки одного запроса</span></p>
+</div>
+<p>На графике видно как до определенного кол-ва потоков запросы обрабатываются <strong>&lt;1 сек</strong>, после чего довольно резко переходят до <strong>&lt;0.1s</strong>.
+Это связано с тем, что запросы некоторое время «ожидают» в очереди радиуса</p>
+</div>
+<div class="section" id="id5">
+<h3><strong>Тест 2: максимальная производительность</strong><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h3>
+<p>В данных тестах мы прогоняли от 1000 до <strong>1.000.000</strong> запросов авторизации</p>
+<table class="colwidths-given docutils align-default" id="id17">
+<caption><span class="caption-text">Параметры теста #1</span><a class="headerlink" href="#id17" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Radperf</p></th>
+<th class="head"><p>128 потоков</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Радиус</p></td>
+<td><p>128 потоков</p></td>
+</tr>
+<tr class="row-odd"><td><p>RAM</p></td>
+<td><p>DDR3 16gb</p></td>
+</tr>
+</tbody>
+</table>
+<p>Посмотрим график производительности модуля mbKernel</p>
+<div class="sphinx-charts docutils container" id="id18">
+<div class="sphinx-charts-chart sphinx-charts-chart-id-3 sphinx-charts-chart-uri-../../../_charts/docs/charts/radius_test_16g_pps.json sphinx-charts-chart-dn-chart docutils container" id="sphinx-charts-chart-id-3">
+</div>
+<p class="sphinx-charts-hidden"></p>
+<div class="sphinx-charts-placeholder sphinx-charts-placeholder-3 docutils container" id="id19">
+<p class="caption"><span class="caption-text">Loading…</span></p>
+</div>
+<p class="caption"><span class="caption-text">Производительность модуля mbKernel (packets/s)</span></p>
+</div>
+<div class="sphinx-charts docutils container" id="id20">
+<div class="sphinx-charts-chart sphinx-charts-chart-id-4 sphinx-charts-chart-uri-../../../_charts/docs/charts/radius_test_16g_time.json sphinx-charts-chart-dn-chart docutils container" id="sphinx-charts-chart-id-4">
+</div>
+<p class="sphinx-charts-hidden"></p>
+<div class="sphinx-charts-placeholder sphinx-charts-placeholder-4 docutils container" id="id21">
+<p class="caption"><span class="caption-text">Loading…</span></p>
+</div>
+<p class="caption"><span class="caption-text">Затраченное время на обработку всех запросов</span></p>
+</div>
+<p>Как видно на графике удалось разогнать packets/s до 2954, на 1.000.000 было замечено падение производительности.</p>
+<table class="colwidths-given docutils align-default" id="id22">
+<caption><span class="caption-text">Параметры теста #2</span><a class="headerlink" href="#id22" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Radperf</p></th>
+<th class="head"><p>256 потоков</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Радиус</p></td>
+<td><p>256 потоков</p></td>
+</tr>
+<tr class="row-odd"><td><p>RAM</p></td>
+<td><p>DDR3 32gb</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sphinx-charts docutils container" id="id23">
+<div class="sphinx-charts-chart sphinx-charts-chart-id-5 sphinx-charts-chart-uri-../../../_charts/docs/charts/radius_test_32g_pps.json sphinx-charts-chart-dn-chart docutils container" id="sphinx-charts-chart-id-5">
+</div>
+<p class="sphinx-charts-hidden"></p>
+<div class="sphinx-charts-placeholder sphinx-charts-placeholder-5 docutils container" id="id24">
+<p class="caption"><span class="caption-text">Loading…</span></p>
+</div>
+<p class="caption"><span class="caption-text">Производительность модуля mbKernel (packets/s)</span></p>
+</div>
+<div class="sphinx-charts docutils container" id="id25">
+<div class="sphinx-charts-chart sphinx-charts-chart-id-6 sphinx-charts-chart-uri-../../../_charts/docs/charts/radius_test_32g_time.json sphinx-charts-chart-dn-chart docutils container" id="sphinx-charts-chart-id-6">
+</div>
+<p class="sphinx-charts-hidden"></p>
+<div class="sphinx-charts-placeholder sphinx-charts-placeholder-6 docutils container" id="id26">
+<p class="caption"><span class="caption-text">Loading…</span></p>
+</div>
+<p class="caption"><span class="caption-text">Затраченное время на обработку всех запросов</span></p>
+</div>
+<p>Как видно на графике удалось разогнать packets/s до 4583, на 1.000.000 было замечено падение производительности и более высокая нагрузка на MySQL.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><strong>Заключение</strong><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Логика в настройке радиуса проста: больше потоков =&gt; больше производительнось, но не стоит забывать что каждый поток потребляет ресурсы сервера
+и если «увлектись» и выставить слишком большое кол-во потоков то можно добиться обратного эффекта снизив производительность.</p>
+<hr><p>При возникновении проблем, сообщите о них в нашем CRM или Telegram канале.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://crm.mikbill.pro">Тех. поддержка</a></p></li>
+<li><p><a class="reference external" href="https://t.me/ACPMikBiLL">Телеграм канал</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../license.html" class="btn btn-neutral float-right" title="Лицензия" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../toc.html" class="btn btn-neutral float-left" title="Настройка" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Multi-BiLLing.
+
+    </p>
+  </div>
+    
+    
+    
+    Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

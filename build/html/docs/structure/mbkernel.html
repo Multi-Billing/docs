@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MBKernel &mdash; документация Multi-BiLLing 0.1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_SVG"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="MBQueue" href="mbqueue.html" />
+    <link rel="prev" title="MBRadius" href="mbradius.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Multi-BiLLing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../requirements.html">Требования к серверу</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/toc.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faststart.html">Быстрый старт</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="toc.html">Структура биллинга</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mbdbupdate.html">DBUpdate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mbradius.html">MBRadius</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MBKernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mbqueue.html">MBQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mbadmin.html">MBAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mbpayments.html">MBPayments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mbstat.html">MBStat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mbcabapi.html">MBCabinetAPI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../info/toc.html">Настройка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Лицензия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../updates.html">Обновления</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Multi-BiLLing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="toc.html">Структура биллинга</a> &raquo;</li>
+        
+      <li>MBKernel</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/structure/mbkernel.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mbkernel">
+<h1>MBKernel<a class="headerlink" href="#mbkernel" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Модуль используется для обработки Freeradius запросов (Access-Request/Accounting-Request) при авторизации абонентов.</p>
+<div class="section" id="id1">
+<h2>Файловая структура модуля<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/var/bill
+├── mbkernel
+│   ├── production
+│   │   ├── backup -&gt; /var/bill/backup/mbkernel
+│   │   ├── config
+│   │   │   └── config.xml
+│   │   ├── kernel.php
+│   │   └── update
+│   │       ├── kernel.current.checksum
+│   │       ├── kernel.downloaded.checksum
+│   │       └── mbkernel_update.sh
+│   └── testing
+│       ├── backup -&gt; /var/bill/backup/mbkernel
+│       ├── config
+│       │   └── config.xml
+│       ├── kernel.php
+│       └── update
+│           ├── kernel.current.checksum
+│           ├── kernel.downloaded.checksum
+│           └── mbkernel_testing.sh
+├── logs
+│   ├── mbkernel
+│   │   ├── debug.log
+│   │   ├── mbkernel.log
+│   │   └── update.log
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Описание директорий и файлов<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>файл/директория</p></th>
+<th class="head"><p>описание</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/var/bill</p></td>
+<td><p>домашняя директория биллинга</p></td>
+</tr>
+<tr class="row-odd"><td><p>/var/bill/mbkernel</p></td>
+<td><p>домашняя директория модуля</p></td>
+</tr>
+<tr class="row-even"><td><p>/var/bill/mbkernel/production</p></td>
+<td><p>production версия модуля</p></td>
+</tr>
+<tr class="row-odd"><td><p>/var/bill/mbkernel/testing</p></td>
+<td><p>testing версия модуля</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;version&gt;/backup</p></td>
+<td><p>директория для бекапов (подключена из /var/bill/backup/mbdbupdate)</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;version&gt;/config/config.xml</p></td>
+<td><p>файл конфига модуля</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;version&gt;/update</p></td>
+<td><p>директория с файлами обновления</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;version&gt;/update/mbkernel_update.sh</p></td>
+<td><p>загрузчик и установщик обновлений</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;version&gt;/update/kernel.current.checksum</p></td>
+<td><p>файл с md5 суммой текущей версии обновлений</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;version&gt;/update/kernel.downloaded.checksum</p></td>
+<td><p>файл с md5 суммой загруженной версии обновлений</p></td>
+</tr>
+<tr class="row-even"><td><p>/var/bill/logs/mbkernel</p></td>
+<td><p>директория логов модуля</p></td>
+</tr>
+<tr class="row-odd"><td><p>/var/bill/logs/mbkernel/mbkernel.log</p></td>
+<td><p>основной лого модуля</p></td>
+</tr>
+<tr class="row-even"><td><p>/var/bill/logs/mbkernel/debug.log</p></td>
+<td><p>debug лог модуля</p></td>
+</tr>
+<tr class="row-odd"><td><p>/var/bill/logs/mbkernel/update.log</p></td>
+<td><p>лог обновлений модуля</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>Файл конфигурации<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Файл расположен по пути <code class="docutils literal notranslate"><span class="pre">/var/bill/mbkernel/&lt;version&gt;/config/config.xml</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;config&gt;</span>
+  <span class="nt">&lt;parameters&gt;</span>
+    <span class="nt">&lt;mysql&gt;</span>
+      <span class="nt">&lt;host&gt;</span>DATABASE_IP<span class="nt">&lt;/host&gt;</span>
+      <span class="nt">&lt;username&gt;</span>DATABASE_USER<span class="nt">&lt;/username&gt;</span>
+      <span class="nt">&lt;password&gt;</span>DATABASE_PASSWORD<span class="nt">&lt;/password&gt;</span>
+      <span class="nt">&lt;dbname&gt;</span>DATABASE_NAME<span class="nt">&lt;/dbname&gt;</span>
+    <span class="nt">&lt;/mysql&gt;</span>
+    <span class="nt">&lt;kernel&gt;</span>
+      <span class="nt">&lt;ip&gt;</span>127.0.0.1<span class="nt">&lt;/ip&gt;</span>
+      <span class="nt">&lt;port&gt;</span>22007<span class="nt">&lt;/port&gt;</span>
+      <span class="nt">&lt;pid&gt;</span>/var/run/mbkernel/kernel_production.pid<span class="nt">&lt;/pid&gt;</span>
+      <span class="nt">&lt;log&gt;</span>/var/bill/logs/mbkernel/mbkernel.log<span class="nt">&lt;/log&gt;</span>
+      <span class="nt">&lt;debug&gt;</span>false<span class="nt">&lt;/debug&gt;</span>
+      <span class="nt">&lt;debug_log&gt;</span>/var/bill/logs/mbkernel/debug.log<span class="nt">&lt;/debug_log&gt;</span>
+      <span class="nt">&lt;request_timing&gt;</span>3.000001<span class="nt">&lt;/request_timing&gt;</span>
+    <span class="nt">&lt;/kernel&gt;</span>
+  <span class="nt">&lt;timezone&gt;</span>Europe/Kiev<span class="nt">&lt;/timezone&gt;</span>
+  <span class="nt">&lt;/parameters&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>параметр</p></th>
+<th class="head"><p>описание</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mysql секция</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>host</p></td>
+<td><p>IP адрес базы данных</p></td>
+</tr>
+<tr class="row-even"><td><p>username</p></td>
+<td><p>имя пользователя для подключения к базе данных</p></td>
+</tr>
+<tr class="row-odd"><td><p>password</p></td>
+<td><p>пароль пользователя</p></td>
+</tr>
+<tr class="row-even"><td><p>dbname</p></td>
+<td><p>название базы данных биллинга</p></td>
+</tr>
+<tr class="row-odd"><td><p>kernel секция</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ip</p></td>
+<td><p>на каком IP будет запущено ядро</p></td>
+</tr>
+<tr class="row-odd"><td><p>port</p></td>
+<td><p>на каком порту ядро будет слушать запросы от radius</p></td>
+</tr>
+<tr class="row-even"><td><p>pid</p></td>
+<td><p>путь где будет создан PID файл ядра</p></td>
+</tr>
+<tr class="row-odd"><td><p>log</p></td>
+<td><p>лог файл для отображения работы ядра</p></td>
+</tr>
+<tr class="row-even"><td><p>debug</p></td>
+<td><p>режим дебага ядра, значения <code class="docutils literal notranslate"><span class="pre">true/false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>debug_log</p></td>
+<td><p>лог файл куда будет записана информация из дебага</p></td>
+</tr>
+<tr class="row-even"><td><p>request_timing</p></td>
+<td><p>записывает информацию о медленных запросах (в режиме дебага)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>timezone</p></td>
+<td><p>Временная зона</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2>Загрузщик обновлений<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Варианты запуска файла <code class="docutils literal notranslate"><span class="pre">/var/bill/mbkernel/&lt;version&gt;/mbkernel_update.sh</span></code></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Ключ</p></th>
+<th class="head"><p>Описание</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p>Обычный запуск без параметров, скачает последнюю доступную версию обновления</p></td>
+</tr>
+<tr class="row-odd"><td><p>-f</p></td>
+<td><p>Режим принудительного повторного обновления (игнорирует md5 проверку)</p></td>
+</tr>
+<tr class="row-even"><td><p>-t</p></td>
+<td><p>Произвести загрузку testing версии обновления</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cron">
+<h2>Задания cron<a class="headerlink" href="#cron" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li><p>Файл с заданиями модуля расположен по пути <code class="docutils literal notranslate"><span class="pre">/etc/cron.d/mbkernel</span></code> и содержит задания</p>
+<ul>
+<li><p>синхронизация времени на сервере</p></li>
+<li><p>запуск обновления production версии модуля</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># For details see man 4 crontabs</span>
+
+<span class="c1"># Example of job definition:</span>
+<span class="c1"># .---------------- minute (0 - 59)</span>
+<span class="c1"># |  .------------- hour (0 - 23)</span>
+<span class="c1"># |  |  .---------- day of month (1 - 31)</span>
+<span class="c1"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span>
+<span class="c1"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span>
+<span class="c1"># |  |  |  |  |</span>
+<span class="c1"># *  *  *  *  * user-name  command to be executed</span>
+
+<span class="c1"># sync time</span>
+<span class="m">0</span> * * * *  root /usr/bin/chronyc -a <span class="s1">&#39;burst 4/4&#39;</span> &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+
+<span class="c1"># update</span>
+<span class="m">05</span> <span class="m">6</span> * * * root /var/bill/mbkernel/production/update/mbkernel_update.sh
+</pre></div>
+</div>
+<hr><p>При возникновении проблем, сообщите о них в нашем CRM или Telegram канале.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://crm.mikbill.pro">Тех. поддержка</a></p></li>
+<li><p><a class="reference external" href="https://t.me/ACPMikBiLL">Телеграм канал</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mbqueue.html" class="btn btn-neutral float-right" title="MBQueue" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mbradius.html" class="btn btn-neutral float-left" title="MBRadius" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Multi-BiLLing.
+
+    </p>
+  </div>
+    
+    
+    
+    Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>База данных &mdash; документация Multi-BiLLing 0.1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_SVG"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" />
+    <link rel="next" title="DBUpdate" href="mbdbupdate.html" />
+    <link rel="prev" title="Модульная установка" href="toc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Multi-BiLLing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../requirements.html">Требования к серверу</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../toc.html">Установка</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../centos8.html">Установка на Centos 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debian10.html">Установка на Debian 10</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="toc.html">Модульная установка</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">База данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbdbupdate.html">DBUpdate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbradius.html">MBRadius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbkernel.html">MBKernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbqueue.html">MBQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbadmin.html">MBAdmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbpayments.html">MBPayments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbstat.html">MBStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbcabapi.html">MBCabinetAPI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../postinstall.html">Действия после установки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faststart.html">Быстрый старт</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../structure/toc.html">Структура биллинга</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../info/toc.html">Настройка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">Лицензия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updates.html">Обновления</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Multi-BiLLing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../toc.html">Установка</a> &raquo;</li>
+        
+          <li><a href="toc.html">Модульная установка</a> &raquo;</li>
+        
+      <li>База данных</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/docs/install/modules/database.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>База данных<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>При установке используется последняя версия Percona DB.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Внимание</p>
+<p>Установщик не изменяет и не отключает firewall/iptables на сервере, если MySQL будет использоваться на отдельном сервере обратите на это внимание!</p>
+</div>
+<div class="section" id="id2">
+<h2><strong>Конфигурация</strong><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Файл конфигурации находится в ./config/database.yaml</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mysql</span><span class="p">:</span>
+  <span class="c1"># на каком адресе запускать MySQL</span>
+  <span class="nt">bind</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
+  <span class="c1"># адрес подключения к MySQL (для конфигов модулей биллинга)</span>
+  <span class="c1"># если указан не 127.0.0.1, то считается что MySQL на отдельном сервере</span>
+  <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
+  <span class="c1"># пользователь с правами root (для создания базы, пользователей)</span>
+  <span class="c1"># только если модули биллинга устанавливаются на одном сервере с MySQL</span>
+  <span class="nt">login</span><span class="p">:</span> <span class="s">&quot;root&quot;</span>
+  <span class="c1"># пароль от пользователя root</span>
+  <span class="c1"># если пароль указан, то он будет использоваться при попытке подключения к базе (пользователь должен быть создан заранее)</span>
+  <span class="c1"># если значение пустое, пароль будет считан с лога установки и сгенерирован новый</span>
+  <span class="nt">pass</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+  <span class="c1"># название рабочей базы</span>
+  <span class="nt">database</span><span class="p">:</span> <span class="s">&quot;bill&quot;</span>
+  <span class="c1"># название тест базы</span>
+  <span class="nt">testing</span><span class="p">:</span> <span class="s">&quot;bill_test&quot;</span>
+  <span class="c1"># кодировка базы данных</span>
+  <span class="nt">encoding</span><span class="p">:</span> <span class="s">&quot;koi8r&quot;</span>
+  <span class="nt">collation</span><span class="p">:</span> <span class="s">&quot;koi8r_general_ci&quot;</span>
+  <span class="c1"># восстановить базу из бекапа</span>
+  <span class="c1"># пример:</span>
+  <span class="c1"># backup_file: &quot;/home/database-2020-12-01.sql&quot;</span>
+  <span class="c1"># работает только если бекап создан без лишних ключей, к примеру:</span>
+  <span class="c1">#     mysqldump --single-transaction -u root -pstrongpassword billing &gt; /home/backup/files/database.sql</span>
+  <span class="nt">backup_file</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><strong>Установка</strong><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Скачать и распаковать архив установщика:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget http://setup.multi-billing.pro/database.tar.gz
+tar zxf database.tar.gz
+</pre></div>
+</div>
+<p>Если база данных устанавливается на отдельном сервере, необходимо в конфигурации <code class="docutils literal notranslate"><span class="pre">config/billing.yaml</span></code> в переменной <code class="docutils literal notranslate"><span class="pre">bind</span></code> указать IP адрес на котором будет запущена служба базы данных</p>
+<p>После чего можно запускать процесс установки:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ansible-playbook database.yml
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><strong>Информация</strong><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Во время установки будет использоваться стандартный конфиг биллинга для MySQL рассчитаный на базовую установку.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<button>Show/Hide Config</button></div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[client]</span>
+<span class="na">port</span> <span class="o">=</span> <span class="s">3306</span>
+<span class="na">socket</span><span class="o">=</span><span class="s">/var/lib/mysql/mysql.sock</span>
+
+<span class="k">[mysql]</span>
+<span class="na">loose-local-infile</span><span class="o">=</span><span class="s">1</span>
+
+<span class="k">[mysqld_safe]</span>
+<span class="na">err-log</span> <span class="o">=</span> <span class="s">/var/log/mysql/mysql.err</span>
+
+<span class="k">[mysqld]</span>
+<span class="na">user</span> <span class="o">=</span> <span class="s">mysql</span>
+<span class="na">port</span> <span class="o">=</span> <span class="s">3306</span>
+<span class="na">bind-address</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
+<span class="na">socket</span> <span class="o">=</span> <span class="s">/var/lib/mysql/mysql.sock</span>
+<span class="na">pid-file</span> <span class="o">=</span> <span class="s">/var/run/mysqld/mysqld.pid</span>
+<span class="na">log-error</span> <span class="o">=</span> <span class="s">/var/log/mysql/mysql.err</span>
+<span class="na">basedir</span> <span class="o">=</span> <span class="s">/usr</span>
+<span class="na">datadir</span> <span class="o">=</span> <span class="s">/var/lib/mysql</span>
+<span class="na">skip-external-locking</span>
+<span class="c1">#symbolic-links=0</span>
+<span class="na">skip-name-resolve</span>
+<span class="na">default-storage-engine</span><span class="o">=</span><span class="s">innodb</span>
+<span class="na">log_bin_trust_function_creators</span><span class="o">=</span><span class="s">1</span>
+<span class="na">skip-log-bin</span>
+<span class="na">sync_binlog</span> <span class="o">=</span> <span class="s">0</span>
+<span class="na">sql-mode</span><span class="o">=</span><span class="s">&#39;&#39;</span>
+<span class="na">optimizer_switch</span> <span class="o">=</span> <span class="s">&#39;index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=off,index_condition_pushdown=off,mrr=off,mrr_cost_based=off,subquery_materialization_cost_based=off,use_index_extensions=off,condition_fanout_filter=off,derived_merge=off,use_invisible_indexes=off,skip_scan=off,hash_join=off&#39;</span>
+<span class="na">performance_schema</span> <span class="o">=</span> <span class="s">OFF</span>
+
+
+<span class="c1">#system</span>
+<span class="na">loose-local-infile</span><span class="o">=</span><span class="s">1</span>
+<span class="na">open_files_limit</span> <span class="o">=</span> <span class="s">35000</span>
+<span class="c1">#query_cache_size = 256M</span>
+<span class="c1">#query_cache_limit = 256M</span>
+<span class="na">join_buffer_size</span> <span class="o">=</span> <span class="s">256M</span>
+<span class="na">max_join_size</span><span class="o">=</span><span class="s">256M</span>
+<span class="na">max_connect_errors</span> <span class="o">=</span> <span class="s">1K</span>
+<span class="na">max_allowed_packet</span><span class="o">=</span><span class="s">16M</span>
+<span class="na">table_open_cache</span> <span class="o">=</span> <span class="s">4096</span>
+<span class="c1">#table_cache = 1k</span>
+<span class="na">max_heap_table_size</span> <span class="o">=</span> <span class="s">1024M</span>
+<span class="na">tmp_table_size</span> <span class="o">=</span> <span class="s">1024M</span>
+<span class="na">interactive_timeout</span> <span class="o">=</span> <span class="s">120</span>
+<span class="na">wait_timeout</span> <span class="o">=</span> <span class="s">120</span>
+<span class="na">connect_timeout</span> <span class="o">=</span> <span class="s">120</span>
+<span class="na">thread_cache_size</span> <span class="o">=</span> <span class="s">32</span>
+<span class="c1">#thread_concurrency = 4</span>
+<span class="na">max_connections</span> <span class="o">=</span> <span class="s">128</span>
+
+<span class="c1">#Myisam</span>
+<span class="na">key_buffer_size</span> <span class="o">=</span> <span class="s">8M</span>
+<span class="na">sort_buffer_size</span> <span class="o">=</span> <span class="s">2M</span>
+<span class="na">read_buffer_size</span> <span class="o">=</span> <span class="s">2M</span>
+<span class="na">read_rnd_buffer_size</span> <span class="o">=</span> <span class="s">2M</span>
+<span class="na">myisam_sort_buffer_size</span> <span class="o">=</span> <span class="s">2M</span>
+
+
+<span class="c1">#ниже включается бинари лог, разкоментируйте следующие 2 строки чтобы включить</span>
+<span class="c1">#server-id=1</span>
+<span class="c1">#log-bin=mysqld-bin</span>
+<span class="na">tmpdir</span> <span class="o">=</span> <span class="s">/tmp/</span>
+
+<span class="c1"># innodb</span>
+<span class="na">innodb_file_per_table</span>
+<span class="na">innodb_flush_method</span><span class="o">=</span><span class="s">O_DIRECT</span>
+<span class="na">innodb_buffer_pool_size</span> <span class="o">=</span> <span class="s">1372M</span>
+<span class="c1"># default is 8 (or 1 if innodb_buffer_pool_size &lt; 1GB)</span>
+<span class="na">innodb_buffer_pool_instances</span> <span class="o">=</span> <span class="s">4</span>
+<span class="c1">#innodb_additional_mem_pool_size = 4M</span>
+<span class="na">innodb_data_home_dir</span> <span class="o">=</span> <span class="s">/var/lib/mysql/</span>
+<span class="na">innodb_log_group_home_dir</span> <span class="o">=</span> <span class="s">/var/lib/mysql/</span>
+<span class="na">innodb_data_file_path</span> <span class="o">=</span> <span class="s">ibdata1:12M:autoextend</span>
+<span class="na">innodb_log_file_size</span> <span class="o">=</span> <span class="s">256M</span>
+<span class="na">innodb_log_buffer_size</span> <span class="o">=</span> <span class="s">8M</span>
+<span class="na">innodb_log_files_in_group</span> <span class="o">=</span> <span class="s">2</span>
+<span class="na">innodb_flush_log_at_trx_commit</span> <span class="o">=</span> <span class="s">0</span>
+<span class="na">innodb_lock_wait_timeout</span> <span class="o">=</span> <span class="s">300</span>
+<span class="na">innodb_read_io_threads</span> <span class="o">=</span> <span class="s">4</span>
+<span class="na">innodb_write_io_threads</span> <span class="o">=</span> <span class="s">4</span>
+<span class="na">innodb_thread_concurrency</span> <span class="o">=</span> <span class="s">4</span>
+
+
+<span class="k">[mysqldump]</span>
+<span class="na">quick</span>
+<span class="na">max_allowed_packet</span> <span class="o">=</span> <span class="s">16M</span>
+
+<span class="k">[isamchk]</span>
+<span class="na">key_buffer</span> <span class="o">=</span> <span class="s">20M</span>
+<span class="na">sort_buffer_size</span> <span class="o">=</span> <span class="s">20M</span>
+<span class="na">read_buffer</span> <span class="o">=</span> <span class="s">2M</span>
+<span class="na">write_buffer</span> <span class="o">=</span> <span class="s">2M</span>
+
+<span class="k">[myisamchk]</span>
+<span class="na">key_buffer_size</span> <span class="o">=</span> <span class="s">256M</span>
+<span class="na">sort_buffer_size</span> <span class="o">=</span> <span class="s">256M</span>
+<span class="na">read_buffer</span> <span class="o">=</span> <span class="s">2M</span>
+<span class="na">write_buffer</span> <span class="o">=</span> <span class="s">2M</span>
+
+<span class="k">[mysqlhotcopy]</span>
+<span class="na">interactive-timeout</span>
+
+<span class="k">[mysqld_safe]</span>
+<span class="na">log-error</span><span class="o">=</span><span class="s">/var/log/mysql/mysqld.log</span>
+<span class="na">pid-file</span><span class="o">=</span><span class="s">/var/run/mysqld/mysqld.pid</span>
+</pre></div>
+</div>
+</div>
+<hr><p>Так же будут созданы пользователи:</p>
+<dl>
+<dt><a class="reference internal" href="mbadmin.html"><span class="doc">mbadmin</span></a></dt><dd><p>Используется для модуля админки, имеет свою роль role_mbadmin с правами:</p>
+<blockquote>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">bill</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;role_mbadmin&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="mbradius.html"><span class="doc">mbradius</span></a></dt><dd><p>Используется для модуля радиуса, имеет свою роль role_mbradius с правами:</p>
+<blockquote>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">SELECT</span> <span class="k">ON</span> <span class="n">bill</span><span class="p">.</span><span class="n">radnas</span> <span class="k">TO</span> <span class="s1">&#39;role_mbradius&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="mbkernel.html"><span class="doc">mbkernel</span></a></dt><dd><p>Используется для модуля ядра билинга, имеет свою роль role_mbkernel с правами:</p>
+<blockquote>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">bill</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;role_mbkernel&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="mbpayments.html"><span class="doc">mbpayments</span></a></dt><dd><p>Используется для модуля платежных систем, имеет свою роль role_mbpayments с правами:</p>
+<blockquote>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">bill</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;role_mbpayments&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="mbqueue.html"><span class="doc">mbqueue</span></a></dt><dd><p>Используется для модуля очереди, имеет свою роль role_mbqueue с правами:</p>
+<blockquote>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">bill</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;role_mbqueue&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="mbstat.html"><span class="doc">mbstat</span></a></dt><dd><p>Используется для модуля личного кабинета, имеет свою роль role_mbstat с правами:</p>
+<blockquote>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">bill</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;role_mbstat&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="mbcabapi.html"><span class="doc">mbcabapi</span></a></dt><dd><p>Используется для модуля API личного кабинета, имеет свою роль role_mbcabapi с правами:</p>
+<blockquote>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">bill</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;role_mbcabapi&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="mbdbupdate.html"><span class="doc">mbdbupdate</span></a></dt><dd><p>Используется для модуля обновления структуры базы биллинга, имеет свою роль mbdbupdate с правами:</p>
+<blockquote>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">bill</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;role_mbdbupdate&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+</dl>
+<div class="admonition important">
+<p class="admonition-title">Важно</p>
+<p>Указанные наборы привилегий не конечные и могут изменяться с выходом новых обновлений.</p>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2><strong>Troubleshooting</strong><a class="headerlink" href="#troubleshooting" title="Ссылка на этот заголовок">¶</a></h2>
+<hr><p>При возникновении проблем, сообщите о них в нашем CRM или Telegram канале.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://crm.mikbill.pro">Тех. поддержка</a></p></li>
+<li><p><a class="reference external" href="https://t.me/ACPMikBiLL">Телеграм канал</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mbdbupdate.html" class="btn btn-neutral float-right" title="DBUpdate" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="toc.html" class="btn btn-neutral float-left" title="Модульная установка" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Multi-BiLLing.
+
+    </p>
+  </div>
+    
+    
+    
+    Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

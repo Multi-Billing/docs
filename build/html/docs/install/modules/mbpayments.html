@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MBPayments &mdash; документация Multi-BiLLing 0.1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_SVG"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" />
+    <link rel="next" title="MBStat" href="mbstat.html" />
+    <link rel="prev" title="MBAdmin" href="mbadmin.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Multi-BiLLing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../requirements.html">Требования к серверу</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../toc.html">Установка</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../centos8.html">Установка на Centos 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debian10.html">Установка на Debian 10</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="toc.html">Модульная установка</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="database.html">База данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbdbupdate.html">DBUpdate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbradius.html">MBRadius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbkernel.html">MBKernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbqueue.html">MBQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbadmin.html">MBAdmin</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MBPayments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbstat.html">MBStat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mbcabapi.html">MBCabinetAPI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../postinstall.html">Действия после установки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faststart.html">Быстрый старт</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../structure/toc.html">Структура биллинга</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../info/toc.html">Настройка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">Лицензия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updates.html">Обновления</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Multi-BiLLing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../toc.html">Установка</a> &raquo;</li>
+        
+          <li><a href="toc.html">Модульная установка</a> &raquo;</li>
+        
+      <li>MBPayments</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/docs/install/modules/mbpayments.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mbpayments">
+<h1>MBPayments<a class="headerlink" href="#mbpayments" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Модуль приема платежей</p>
+<div class="section" id="id1">
+<h2>Установка<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Скачаем архив установщика, разархивируем его и запустим установку:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget http://setup.multi-billing.pro/mbpayments.tar.gz
+tar zxf mbpayments.tar.gz
+ansible-playbook mbpayments.yml
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Установка если база данных на отдельном сервере<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Необходимо создать пользователя в базе данных:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;mbpayments&#39;</span><span class="o">@</span><span class="s1">&#39;&lt;IP_ADDRESS&gt;&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">WITH</span> <span class="n">mysql_native_password</span> <span class="k">BY</span> <span class="s1">&#39;&lt;USER_PASSWORD&gt;&#39;</span> <span class="n">REQUIRE</span> <span class="k">NONE</span><span class="p">;</span>
+<span class="k">GRANT</span> <span class="s1">&#39;role_mbpayments&#39;</span> <span class="k">TO</span> <span class="s1">&#39;mbpayments&#39;</span><span class="o">@</span><span class="s1">&#39;&lt;IP_ADDRESS&gt;&#39;</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">DEFAULT</span> <span class="k">ROLE</span> <span class="s1">&#39;role_mbpayments&#39;</span> <span class="k">TO</span> <span class="s1">&#39;mbpayments&#39;</span><span class="o">@</span><span class="s1">&#39;&lt;IP_ADDRESS&gt;&#39;</span><span class="p">;</span>
+<span class="n">FLUSH</span> <span class="k">PRIVILEGES</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Внимание</p>
+<p>Замените &lt;IP_ADDRESS&gt; на адрес сервера с которого будет идти подключение к базе данных и &lt;USER_PASSWORD&gt; на пароль для подключения.</p>
+</div>
+<p>Далее скачать и разархивировать архив установщика</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget http://setup.multi-billing.pro/mbpayments.tar.gz
+tar zxf mbpayments.tar.gz
+</pre></div>
+</div>
+<p>Нужно указать IP адрес сервера MySQL в конфиге: <code class="docutils literal notranslate"><span class="pre">config/database.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># адрес подключения к MySQL (для конфигов модулей биллинга)</span>
+<span class="c1"># если указан не 127.0.0.1, то считается что MySQL на отдельном сервере</span>
+<span class="hll"><span class="nt">host</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Указать пароль пользователя от базы данных в конфиге: <code class="docutils literal notranslate"><span class="pre">config/modules/mbpayments.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">mbpayments</span><span class="p">:</span>
+  <span class="nt">software</span><span class="p">:</span>
+    <span class="nt">database</span><span class="p">:</span>
+      <span class="nt">mysql_user</span><span class="p">:</span> <span class="s">&quot;mbpayments&quot;</span>
+      <span class="nt">mysql_role</span><span class="p">:</span> <span class="s">&quot;role_mbpayments&quot;</span>
+<span class="hll">      <span class="c1"># Пароль пользователя</span>
+</span><span class="hll">      <span class="c1"># если пароль указан, то он будет использоваться при попытке подключения к базе (пользователь должен быть создан заранее)</span>
+</span><span class="hll">      <span class="c1"># если значение пустое, пароль будет сгенерирован (если база данных на одном сервере с модулем)</span>
+</span><span class="hll">      <span class="nt">mysql_pass</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Далее можно запускать процесс установки:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ansible-playbook mbpayments.yml
+</pre></div>
+</div>
+<hr><p>При возникновении проблем, сообщите о них в нашем CRM или Telegram канале.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://crm.mikbill.pro">Тех. поддержка</a></p></li>
+<li><p><a class="reference external" href="https://t.me/ACPMikBiLL">Телеграм канал</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mbstat.html" class="btn btn-neutral float-right" title="MBStat" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mbadmin.html" class="btn btn-neutral float-left" title="MBAdmin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Multi-BiLLing.
+
+    </p>
+  </div>
+    
+    
+    
+    Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

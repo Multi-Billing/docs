@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Файлы конфигурации &mdash; документация Multi-BiLLing 0.1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_SVG"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Multi-BiLLing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements.html">Требования к серверу</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/toc.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faststart.html">Быстрый старт</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../structure/toc.html">Структура биллинга</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../info/toc.html">Настройка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">Лицензия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updates.html">Обновления</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Multi-BiLLing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Файлы конфигурации</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/docs/includes/config/mbradius.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Файлы конфигурации<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Файл <strong>core.pl</strong> содержит переменные <code class="docutils literal notranslate"><span class="pre">$host</span></code> и <code class="docutils literal notranslate"><span class="pre">$port</span></code> для подключения к ядру биллинга</p>
+<div class="highlight-perl notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nn">strict</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">vars</span> <span class="sx">qw(%RAD_REQUEST %RAD_REPLY %RAD_CHECK)</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">IO::Socket</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">locale</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">POSIX</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">serialize</span><span class="p">;</span>
+
+<span class="n">setlocale</span><span class="p">(</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">);</span>
+<span class="k">use</span> <span class="nn">constant</span>    <span class="n">RLM_MODULE_REJECT</span><span class="o">=&gt;</span>  <span class="mi">0</span><span class="p">;</span><span class="c1">#  /* immediately reject the request */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_FAIL</span><span class="o">=&gt;</span>      <span class="mi">1</span><span class="p">;</span><span class="c1">#  /* module failed, don&#39;t reply */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_OK</span><span class="o">=&gt;</span>        <span class="mi">2</span><span class="p">;</span><span class="c1">#  /* the module is OK, continue */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_HANDLED</span><span class="o">=&gt;</span>   <span class="mi">3</span><span class="p">;</span><span class="c1">#  /* the module handled the request, so stop. */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_INVALID</span><span class="o">=&gt;</span>   <span class="mi">4</span><span class="p">;</span><span class="c1">#  /* the module considers the request invalid. */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_USERLOCK</span><span class="o">=&gt;</span>  <span class="mi">5</span><span class="p">;</span><span class="c1">#  /* reject the request (user is locked out) */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_NOTFOUND</span><span class="o">=&gt;</span>  <span class="mi">6</span><span class="p">;</span><span class="c1">#  /* user not found */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_NOOP</span><span class="o">=&gt;</span>      <span class="mi">7</span><span class="p">;</span><span class="c1">#  /* module succeeded without doing anything */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_UPDATED</span><span class="o">=&gt;</span>   <span class="mi">8</span><span class="p">;</span><span class="c1">#  /* OK (pairs modified) */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RLM_MODULE_NUMCODES</span><span class="o">=&gt;</span>  <span class="mi">9</span><span class="p">;</span><span class="c1">#  /* How many return codes there are */</span>
+
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RADIUS_L_DBG</span><span class="o">=&gt;</span>         <span class="mi">0</span><span class="p">;</span><span class="c1"># /* debug log  */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RADIUS_L_AUTH</span><span class="o">=&gt;</span>        <span class="mi">1</span><span class="p">;</span><span class="c1"># /* auth log   */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RADIUS_L_PROXY</span><span class="o">=&gt;</span>       <span class="mi">2</span><span class="p">;</span><span class="c1"># /* peroxy log */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RADIUS_L_INFO</span><span class="o">=&gt;</span>        <span class="mi">3</span><span class="p">;</span><span class="c1"># /* info log   */</span>
+<span class="k">use</span> <span class="nn">constant</span>  <span class="n">RADIUS_L_ERROR</span><span class="o">=&gt;</span>       <span class="mi">4</span><span class="p">;</span><span class="c1"># /* error log  */</span>
+
+<span class="c1"># mbkernel daemon IP address and port</span>
+<span class="hll"><span class="k">my</span> <span class="nv">$host</span><span class="o">=</span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">;</span>
+</span><span class="hll"><span class="k">my</span> <span class="nv">$port</span><span class="o">=</span><span class="s">&quot;22007&quot;</span><span class="p">;</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Файл <strong>sql.conf</strong> содержит переменные <code class="docutils literal notranslate"><span class="pre">server</span></code>, <code class="docutils literal notranslate"><span class="pre">port</span></code>, <code class="docutils literal notranslate"><span class="pre">login</span></code>, <code class="docutils literal notranslate"><span class="pre">password</span></code>, <code class="docutils literal notranslate"><span class="pre">radius_db</span></code> для подключения к базе данных</p>
+<div class="highlight-ini notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="na">sql {</span>
+      <span class="na">database</span> <span class="o">=</span> <span class="s">&quot;mysql&quot;</span>
+      <span class="na">driver</span> <span class="o">=</span> <span class="s">&quot;rlm_sql_${database}&quot;</span>
+<span class="hll">      <span class="na">server</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1&quot;</span>
+</span><span class="hll">      <span class="na">port</span> <span class="o">=</span> <span class="s">3306</span>
+</span><span class="hll">      <span class="na">login</span> <span class="o">=</span> <span class="s">&quot;user_name&quot;</span>
+</span><span class="hll">      <span class="na">password</span> <span class="o">=</span> <span class="s">&quot;user_password&quot;</span>
+</span><span class="hll">      <span class="na">radius_db</span> <span class="o">=</span> <span class="s">&quot;database_name&quot;</span>
+</span></pre></div>
+</td></tr></table></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Multi-BiLLing.
+
+    </p>
+  </div>
+    
+    
+    
+    Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

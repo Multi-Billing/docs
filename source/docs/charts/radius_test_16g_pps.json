@@ -1,0 +1,66 @@
+{
+    "data":[
+        {
+            "line":{
+                "color":"#17becf",
+                "dash":"line"
+            },
+            "name":"Packets/s",
+            "type":"scatter",
+            "mode": "lines+markers",
+            "autotypenumbers": "strict",
+            "x": [
+              "1000",
+              "3000",
+              "6000",
+              "10000",
+              "20000",
+              "30000",
+              "40000",
+              "50000",
+              "100000",
+              "1000000"
+            ],
+            "y":[
+				2512,
+				2715,
+				2776,
+				2758,
+				2800,
+				2800,
+				2950,
+				2953,
+				2954,
+				2908
+            ]
+        }
+    ],
+    "layout":{
+        "xaxis":{
+            "title":"Authentication count",
+            "type": "category",
+            "categoryorder": "array",
+            "categoryarray": [
+              "1000",
+              "3000",
+              "6000",
+              "10000",
+              "20000",
+              "30000",
+              "40000",
+              "50000",
+              "100000",
+              "1000000"
+            ]
+        },
+        "yaxis":{
+            "title":"Packets/s"
+        }
+    },
+    "meta":{
+        "caption":"1",
+        "id":"1",
+        "name":"12345678",
+        "short_caption":"123"
+    }
+}

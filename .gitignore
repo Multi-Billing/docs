@@ -1,0 +1,6 @@
+
+*.sh
+build
+build/*
+Makefile
+make.bat

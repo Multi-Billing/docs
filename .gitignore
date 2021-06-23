@@ -4,3 +4,8 @@ build
 build/*
 Makefile
 make.bat
+.idea/php.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/modules.xml
+.idea/sphinx.iml
+.idea/workspace.xml

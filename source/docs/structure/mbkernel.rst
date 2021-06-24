@@ -12,26 +12,24 @@ MBKernel
     /var/bill
     ├── mbkernel
     │   ├── production
-    │   │   ├── backup -> /var/bill/backup/mbkernel
     │   │   ├── config
     │   │   │   └── config.xml
     │   │   ├── kernel.php
-    │   │   └── update
+    │   │   └── updates
     │   │       ├── kernel.current.checksum
     │   │       ├── kernel.downloaded.checksum
     │   │       └── mbkernel_update.sh
     │   └── testing
-    │       ├── backup -> /var/bill/backup/mbkernel
     │       ├── config
     │       │   └── config.xml
     │       ├── kernel.php
-    │       └── update
+    │       └── updates
     │           ├── kernel.current.checksum
     │           ├── kernel.downloaded.checksum
     │           └── mbkernel_testing.sh
     ├── logs
     │   ├── mbkernel
-    │   │   ├── debug.log
+    │   │   ├── mbkernel.debug
     │   │   ├── mbkernel.log
     │   │   └── update.log
 
@@ -52,8 +50,8 @@ MBKernel
      - production версия модуля
    * - /var/bill/mbkernel/testing
      - testing версия модуля
-   * - <version>/backup
-     - директория для бекапов (подключена из /var/bill/backup/mbdbupdate)
+   * - /var/bill/backup/mbdbupdate
+     - директория для бекапов
    * - <version>/config/config.xml
      - файл конфига модуля
    * - <version>/update

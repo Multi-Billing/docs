@@ -11,7 +11,6 @@ MBQueue
     /var/bill
     ├── mbqueue
     │   ├── production
-    │   │   ├── backup -> /var/bill/backup/mbqueue
     │   │   ├── config
     │   │   │   └── config.xml
     │   │   ├── index.php
@@ -26,12 +25,11 @@ MBQueue
     │   │   │   ├── update_cpu.sh
     │   │   │   ├── update_dev.sh
     │   │   │   └── update_ram.sh
-    │   │   └── update
+    │   │   └── updates
     │   │       ├── mbqueue.current.checksum
     │   │       ├── mbqueue.downloaded.checksum
     │   │       └── mbqueue_update.sh
     │   └── testing
-    │       ├── backup -> /var/bill/backup/mbqueue
     │       ├── config
     │       │   └── config.xml
     │       ├── index.php
@@ -46,61 +44,15 @@ MBQueue
     │       │   ├── update_cpu.sh
     │       │   ├── update_dev.sh
     │       │   └── update_ram.sh
-    │       └── update
+    │       └── updates
     │           ├── mbqueue.current.checksum
     │           ├── mbqueue.downloaded.checksum
     │           └── mbqueue_testing.sh
     ├── logs
     │   ├── mbqueue
-    │   │   ├── debug.log
+    │   │   ├── mbqueue.debug
     │   │   ├── mbqueue.log
     │   │   └── update.log
-    ├── contrib
-    │   ├── custom
-    │   ├── documents
-    │   │   ├── check_horz.html
-    │   │   ├── check.html
-    │   │   ├── check_vert.html
-    │   │   ├── dogovor2.htm
-    │   │   ├── dogovor3.htm
-    │   │   ├── dogovor4.htm
-    │   │   ├── dogovor5.htm
-    │   │   ├── dogovor6.htm
-    │   │   ├── dogovor.htm
-    │   │   ├── dogovor_legal2.htm
-    │   │   ├── dogovor_legal3.htm
-    │   │   ├── dogovor_legal4.htm
-    │   │   ├── dogovor_legal5.htm
-    │   │   ├── dogovor_legal6.htm
-    │   │   ├── dogovor_legal.htm
-    │   │   ├── final_report.htm
-    │   │   ├── pamyatka.htm
-    │   │   ├── tickets_body.htm
-    │   │   ├── tickets_bottom.htm
-    │   │   └── tickets_header.htm
-    │   ├── files
-    │   ├── mrtg
-    │   └── scripts
-    │       ├── cpu_info.sh
-    │       ├── current_ram.sh
-    │       ├── disk_partitions.sh
-    │       ├── logged_in_users.sh
-    │       ├── mb_event_iptv_add.sh
-    │       ├── mb_event_iptv_del.sh
-    │       ├── mb_event_port_change.sh
-    │       ├── mb_event_realip_change.sh
-    │       ├── mb_event_switch_change.sh
-    │       ├── mb_event_ticket_close.sh
-    │       ├── mb_event_ticket_message.sh
-    │       ├── mb_event_ticket_open.sh
-    │       ├── onoff_user_event.sh
-    │       ├── payment_event.sh
-    │       ├── pcq.sh
-    │       ├── pingerarp.sh
-    │       ├── pinger.sh
-    │       ├── port_restart_event.sh
-    │       ├── ram_info.sh
-    │       └── tarif_change_event.sh
 
 Описание директорий и файлов
 *************************************************
@@ -119,8 +71,8 @@ MBQueue
      - production версия модуля
    * - /var/bill/mbqueue/testing
      - testing версия модуля
-   * - <version>/backup
-     - директория для бекапов (подключена из /var/bill/backup/mbqueue)
+   * - /var/bill/backup/mbqueue
+     - директория для бекапов
    * - <version>/config/config.xml
      - файл конфига модуля
    * - <version>/index.php
@@ -139,27 +91,19 @@ MBQueue
      - bash скрипт с набором команд которые необходимо запускать в конце месяца
    * - <version>/scripts/mrtg.sh
      - bash скрипт с командами генерации mrtg графиков
-   * - <version>/scripts/update_bras.sh
-     - bash скрипт с набором команд обновления данных для dashboard
-   * - <version>/scripts/update_cpu.sh
-     - bash скрипт с набором команд обновления данных для dashboard
-   * - <version>/scripts/update_dev.sh
-     - bash скрипт с набором команд обновления данных для dashboard
-   * - <version>/scripts/update_ram.sh
-     - bash скрипт с набором команд обновления данных для dashboard
-   * - <version>/update
+   * - <version>/updates
      - директория с файлами обновления
-   * - <version>/update/mbqueue_update.sh
+   * - <version>/updates/mbqueue_update.sh
      - загрузчик и установщик обновлений
-   * - <version>/update/mbqueue.current.checksum
+   * - <version>/updates/mbqueue.current.checksum
      - файл с md5 суммой текущей версии обновлений
-   * - <version>/update/mbqueue.downloaded.checksum
+   * - <version>/updates/mbqueue.downloaded.checksum
      - файл с md5 суммой загруженной версии обновлений
    * - /var/bill/logs/mbqueue
      - директория логов модуля
    * - /var/bill/logs/mbqueue/mbqueue.log
      - основной лог модуля
-   * - /var/bill/logs/mbqueue/debug.log
+   * - /var/bill/logs/mbqueue/mbqueue.debug
      - debug лог модуля
    * - /var/bill/logs/mbqueue/update.log
      - лог обновлений модуля

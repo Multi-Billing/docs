@@ -24,4 +24,4 @@
     0 * * * *  root /usr/bin/chronyc -a 'burst 4/4' > /dev/null 2>&1
 
     # update
-    05 6 * * * root /var/bill/mbkernel/production/update/mbkernel_update.sh
+    05 6 * * * root /var/bill/mbkernel/production/updates/mbkernel_update.sh

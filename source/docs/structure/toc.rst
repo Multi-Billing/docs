@@ -12,12 +12,7 @@
 	│   ├── mbpayments
 	│   ├── mbqueue
 	│   └── mbstat
-	├── contrib
-	│   ├── custom
-	│   ├── documents
-	│   ├── files
-	│   ├── mrtg
-	│   └── scripts
+	├── mrtg
 	├── license
 	├── logs
 	│   ├── mbadmin
@@ -73,23 +68,8 @@
     /var/bill/backup
         Директория для бекапов модулей
 
-    /var/bill/contrib
-        Подключается через **fstab** во все **chroot** директории модулей
-
-    /var/bill/contrib/custom
-        Директория для кастомных файлов провайдера
-
-    /var/bill/contrib/documents
-        Директория для документов биллинга (шаблоны договоров, чеков и т.д.)
-
-    /var/bill/contrib/files
-        Директория для генерации файлов биллингом (экспорт отчетов, номеров карт пополнения и т.д.)
-
-    /var/bill/contrib/mrtg
+    /var/bill/mrtg
         Директория для mrtg графиков
-
-    /var/bill/contrib/scripts
-        Директория для скриптов запускаемых биллингом (так называемые "ивенты")
 
     /var/bill/license
         Директория для файлов лицензии биллинга
@@ -119,10 +99,9 @@
         Директория модуля Личного кабинета пользователей, имеет chroot среду и production/testing версии модуля
 
 
-
 .. toctree::
 	:hidden:
-	:maxdepth: 2
+	:maxdepth: 5
 	:titlesonly:
 
 	database

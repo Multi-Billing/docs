@@ -1,69 +1,23 @@
 MBRadius
 ###########################################
 
+.. note:: При установке используется последняя версия FreeRadius.
 
-.. note:: При установке используется последняя версия Freeradius.
+.. include:: ../../includes/ansible_install.rst
 
-.. attention:: Установщик не создаст пользователя для Radius если MySQL расположен на другом сервере. В данном случаи пользователя нужно создавать вручную.
-
-Установка
+Установка модуля
 *******************************************
 
-Скачаем архив установщика, разархивируем его и запустим установку:
-
-.. code-block:: bash
-
-  wget http://setup.multi-billing.pro/mbradius.tar.gz
-  tar zxf mbradius.tar.gz
-  ansible-playbook radius.yml
-
-Установка если база данных на отдельном сервере
-*************************************************
-
-Необходимо создать пользователя в базе данных:
-
-.. code-block:: sql
-
-    CREATE USER 'mbradius'@'<IP_ADDRESS>' IDENTIFIED WITH mysql_native_password BY '<USER_PASSWORD>' REQUIRE NONE;
-    GRANT 'role_mbradius' TO 'mbradius'@'<IP_ADDRESS>';
-    SET DEFAULT ROLE 'role_mbradius' TO 'mbradius'@'<IP_ADDRESS>';
-    FLUSH PRIVILEGES;
-
-.. attention:: Замените <IP_ADDRESS> на адрес сервера с которого будет идти подключение к базе данных и <USER_PASSWORD> на пароль для подключения.
-
-Далее скачать и разархивировать архив установщика
+Скачаем архив установщика, разархивируем его:
 
 .. code-block:: bash
 
   wget http://setup.multi-billing.pro/mbradius.tar.gz
   tar zxf mbradius.tar.gz
 
-Указать IP адрес сервера базы данных в конфиге: ``config/database.yaml``
+.. include:: ../../includes/install/modules/remote_billing_modules.rst
 
-.. code-block:: yaml
-  :emphasize-lines: 3,3
-  :linenos:
-  
-  # адрес подключения к MySQL (для конфигов модулей биллинга)
-  # если указан не 127.0.0.1, то считается что MySQL на отдельном сервере
-  host: "127.0.0.1"
-
-
-Указать пароль пользователя от базы данных в конфиге: ``config/modules/mbradius.yaml``
-
-.. code-block:: yaml
-  :emphasize-lines: 6-9
-  :linenos:
-  
-  mbradius:
-    software:
-      database:
-        mysql_user: "mbradius"
-        mysql_role: "role_mbradius"
-        # Пароль пользователя
-        # если пароль указан, то он будет использоваться при попытке подключения к базе (пользователь должен быть создан заранее)
-        # если значение пустое, пароль будет сгенерирован (если база данных на одном сервере с модулем)
-        mysql_pass: ""
+.. include:: ../../includes/install/modules/remote_database.rst
 
 Далее можно запускать процесс установки:
 
@@ -78,7 +32,7 @@ Troubleshooting
 Для отладки используется запуск Radius из консоли в режиме дебага:
 
 .. code-block:: bash
-	
+
 	radiusd -X
 
 Если Radius не может подключиться к MySQL серверу (ниже лог из дебага):
@@ -104,3 +58,10 @@ Troubleshooting
 	Проверить что пользователь в MySQL создан и в нем указан нужный IP сервера Radius
 
 .. include:: ../../footer_links.rst
+
+.. toctree::
+	:hidden:
+	:maxdepth: 5
+	:titlesonly:
+
+	mbradius/manual_install

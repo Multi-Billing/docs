@@ -10,7 +10,7 @@
 
 .. toctree::
 	:hidden:
-	:maxdepth: 5
+	:maxdepth: 6
 	:titlesonly:
 
 	docs/requirements

@@ -10,8 +10,6 @@
   * запуск скрипта для заданий выполняющихся в конце месяца (**lastday.sh**)
   * запуск скрипта для генерации графиков mrtg
 
-Скрипты для обновления графиков dashboard по умолчанию отключены (**update_bras.sh**, **update_cpu.sh**, **update_dev.sh**, **update_ram.sh**)
-
 .. code-block:: bash
 
     # For details see man 4 crontabs
@@ -26,7 +24,7 @@
     # *  *  *  *  * user-name  command to be executed
 
     # update
-    05 6 * * * root /var/bill/mbqueue/production/update/mbqueue_update.sh
+    05 6 * * * root /var/bill/mbqueue/production/updates/mbqueue_update.sh
 
     # billing tasks
     0-59/5 * * * * root /var/bill/mbqueue/production/scripts/5min.sh
@@ -41,9 +39,3 @@
     # monthly write-offs
     59 23 28-31 * * root [ "$(date +%d -d tomorrow)" = "01" ] && /var/bill/mbqueue/production/scripts/lastday.sh
     01 0 1 * * root /var/bill/mbqueue/production/scripts/mth.sh
-
-    # mbp module
-    #0-59/5 * * * * root /var/bill/mbqueue/production/scripts/update_bras.sh
-    #0-59/5 * * * * root /var/bill/mbqueue/production/scripts/update_cpu.sh
-    #0-59/5 * * * * root /var/bill/mbqueue/production/scripts/update_dev.sh
-    #0-59/5 * * * * root /var/bill/mbqueue/production/scripts/update_ram.sh

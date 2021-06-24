@@ -14,14 +14,7 @@ MBCabinetAPI
     │   │   ├── production
     │   │   │   ├── bin -> usr/bin
     │   │   │   ├── dev
-    │   │   │   │   ├── null
-    │   │   │   │   ├── random
-    │   │   │   │   ├── urandom
-    │   │   │   │   └── zero
     │   │   │   ├── etc
-    │   │   │   │   ├── hosts
-    │   │   │   │   ├── localtime
-    │   │   │   │   └── resolv.conf
     │   │   │   ├── home
     │   │   │   ├── lib -> usr/lib
     │   │   │   ├── lib64 -> usr/lib64
@@ -30,20 +23,6 @@ MBCabinetAPI
     │   │   │   ├── tmp
     │   │   │   ├── usr
     │   │   │   │   ├── bin
-    │   │   │   │   │   ├── awk
-    │   │   │   │   │   ├── bash
-    │   │   │   │   │   ├── cat
-    │   │   │   │   │   ├── command
-    │   │   │   │   │   ├── date
-    │   │   │   │   │   ├── echo
-    │   │   │   │   │   ├── free
-    │   │   │   │   │   ├── grep
-    │   │   │   │   │   ├── ls
-    │   │   │   │   │   ├── php
-    │   │   │   │   │   ├── radclient
-    │   │   │   │   │   ├── rm
-    │   │   │   │   │   ├── sed
-    │   │   │   │   │   └── sh
     │   │   │   │   ├── lib
     │   │   │   │   ├── lib64
     │   │   │   │   ├── sbin
@@ -53,7 +32,6 @@ MBCabinetAPI
     │   │   │   └── var
     │   │   │       ├── bill
     │   │   │       │   ├── config -> /var/bill/mbcabapi/production/config
-    │   │   │       │   ├── contrib -> /var/bill/contrib
     │   │   │       │   └── logs -> /var/bill/logs/mbcabapi
     │   │   │       ├── lib
     │   │   │       │   └── php
@@ -66,14 +44,7 @@ MBCabinetAPI
     │   │   └── testing
     │   │       ├── bin -> usr/bin
     │   │       ├── dev
-    │   │       │   ├── null
-    │   │       │   ├── random
-    │   │       │   ├── urandom
-    │   │       │   └── zero
     │   │       ├── etc
-    │   │       │   ├── hosts
-    │   │       │   ├── localtime
-    │   │       │   └── resolv.conf
     │   │       ├── home
     │   │       ├── lib -> usr/lib
     │   │       ├── lib64 -> usr/lib64
@@ -82,20 +53,6 @@ MBCabinetAPI
     │   │       ├── tmp
     │   │       ├── usr
     │   │       │   ├── bin
-    │   │       │   │   ├── awk
-    │   │       │   │   ├── bash
-    │   │       │   │   ├── cat
-    │   │       │   │   ├── command
-    │   │       │   │   ├── date
-    │   │       │   │   ├── echo
-    │   │       │   │   ├── free
-    │   │       │   │   ├── grep
-    │   │       │   │   ├── ls
-    │   │       │   │   ├── php
-    │   │       │   │   ├── radclient
-    │   │       │   │   ├── rm
-    │   │       │   │   ├── sed
-    │   │       │   │   └── sh
     │   │       │   ├── lib
     │   │       │   ├── lib64
     │   │       │   ├── sbin
@@ -105,7 +62,6 @@ MBCabinetAPI
     │   │       └── var
     │   │           ├── bill
     │   │           │   ├── config -> /var/bill/mbcabapi/testing/config
-    │   │           │   ├── contrib -> /var/bill/contrib
     │   │           │   └── logs -> /var/bill/logs/mbcabapi
     │   │           ├── lib
     │   │           │   └── php
@@ -117,7 +73,6 @@ MBCabinetAPI
     │   │                   └── index.php
     │   ├── production
     │   │   ├── add_to_chroot.sh
-    │   │   ├── backup -> /var/bill/backup/mbcabapi
     │   │   ├── config
     │   │   │   └── config.xml
     │   │   ├── public
@@ -128,7 +83,6 @@ MBCabinetAPI
     │   │       └── mbcabapi_update.sh
     │   └── testing
     │       ├── add_to_chroot.sh
-    │       ├── backup -> /var/bill/backup/mbcabapi
     │       ├── config
     │       │   └── config.xml
     │       ├── public
@@ -142,52 +96,6 @@ MBCabinetAPI
     │   │   ├── mbcabapi.debug
     │   │   ├── mbcabapi.log
     │   │   └── update.log
-    ├── contrib
-    │   ├── custom
-    │   ├── documents
-    │   │   ├── check_horz.html
-    │   │   ├── check.html
-    │   │   ├── check_vert.html
-    │   │   ├── dogovor2.htm
-    │   │   ├── dogovor3.htm
-    │   │   ├── dogovor4.htm
-    │   │   ├── dogovor5.htm
-    │   │   ├── dogovor6.htm
-    │   │   ├── dogovor.htm
-    │   │   ├── dogovor_legal2.htm
-    │   │   ├── dogovor_legal3.htm
-    │   │   ├── dogovor_legal4.htm
-    │   │   ├── dogovor_legal5.htm
-    │   │   ├── dogovor_legal6.htm
-    │   │   ├── dogovor_legal.htm
-    │   │   ├── final_report.htm
-    │   │   ├── pamyatka.htm
-    │   │   ├── tickets_body.htm
-    │   │   ├── tickets_bottom.htm
-    │   │   └── tickets_header.htm
-    │   ├── files
-    │   ├── mrtg
-    │   └── scripts
-    │       ├── cpu_info.sh
-    │       ├── current_ram.sh
-    │       ├── disk_partitions.sh
-    │       ├── logged_in_users.sh
-    │       ├── mb_event_iptv_add.sh
-    │       ├── mb_event_iptv_del.sh
-    │       ├── mb_event_port_change.sh
-    │       ├── mb_event_realip_change.sh
-    │       ├── mb_event_switch_change.sh
-    │       ├── mb_event_ticket_close.sh
-    │       ├── mb_event_ticket_message.sh
-    │       ├── mb_event_ticket_open.sh
-    │       ├── onoff_user_event.sh
-    │       ├── payment_event.sh
-    │       ├── pcq.sh
-    │       ├── pingerarp.sh
-    │       ├── pinger.sh
-    │       ├── port_restart_event.sh
-    │       ├── ram_info.sh
-    │       └── tarif_change_event.sh
 
 Описание директорий и файлов
 *************************************************
@@ -200,8 +108,6 @@ MBCabinetAPI
      - описание
    * - /var/bill/mbcabapi/chroot/<version>
      - корневая директория chroot среды
-   * - chroot/<version>/var/bill/contrib
-     - примонтированная директория системы /var/bill/contrib
    * - chroot/<version>/var/bill/config
      - примонтированная директория системы /var/bill/mbcabapi/<version>/config
    * - chroot/<version>/var/bill/logs
@@ -225,8 +131,8 @@ MBCabinetAPI
      - production версия модуля
    * - /var/bill/mbcabapi/testing
      - testing версия модуля
-   * - <version>/backup
-     - директория для бекапов (подключена из /var/bill/backup/mbcabapi)
+   * - /var/bill/backup/mbcabapi
+     - директория для бекапов
    * - <version>/config/config.xml
      - файл конфига модуля
    * - <version>/public

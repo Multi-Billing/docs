@@ -3,64 +3,21 @@ DBUpdate
 
 Модуль используется для обновления структуры базы данных при обновлении билинга
 
-Установка
+.. include:: ../../includes/ansible_install.rst
+
+Установка модуля
 *******************************************
 
-Скачаем архив установщика, разархивируем его и запустим установку:
-
-.. code-block:: bash
-
-  wget http://setup.multi-billing.pro/mbdbupdate.tar.gz
-  tar zxf mbdbupdate.tar.gz
-  ansible-playbook mbdbupdate.yml
-
-Установка если база данных на отдельном сервере
-*************************************************
-
-Необходимо создать пользователя в базе данных:
-
-.. code-block:: sql
-
-    CREATE USER 'mbdbupdate'@'<IP_ADDRESS>' IDENTIFIED WITH mysql_native_password BY '<USER_PASSWORD>' REQUIRE NONE;
-    GRANT 'role_mbdbupdate' TO 'mbdbupdate'@'<IP_ADDRESS>';
-    SET DEFAULT ROLE 'role_mbdbupdate' TO 'mbdbupdate'@'<IP_ADDRESS>';
-    FLUSH PRIVILEGES;
-
-.. attention:: Замените <IP_ADDRESS> на адрес сервера с которого будет идти подключение к базе данных и <USER_PASSWORD> на пароль для подключения.
-
-
-Далее скачать и разархивировать архив установщика
+Скачаем архив установщика, разархивируем его:
 
 .. code-block:: bash
 
   wget http://setup.multi-billing.pro/mbdbupdate.tar.gz
   tar zxf mbdbupdate.tar.gz
 
-Нужно указать IP адрес сервера MySQL в конфиге: ``config/database.yaml``
+.. include:: ../../includes/install/modules/remote_billing_modules.rst
 
-.. code-block:: yaml
-  :emphasize-lines: 3,3
-  :linenos:
-  
-  # адрес подключения к MySQL (для конфигов модулей биллинга)
-  # если указан не 127.0.0.1, то считается что MySQL на отдельном сервере
-  host: "127.0.0.1"
-
-Указать пароль пользователя от базы данных в конфиге: ``config/modules/mbdbupdate.yaml``
-
-.. code-block:: yaml
-  :emphasize-lines: 6-9
-  :linenos:
-  
-  mbdbupdate:
-    software:
-      database:
-        mysql_user: "mbdbupdate"
-        mysql_role: "role_mbdbupdate"
-        # Пароль пользователя
-        # если пароль указан, то он будет использоваться при попытке подключения к базе (пользователь должен быть создан заранее)
-        # если значение пустое, пароль будет сгенерирован (если база данных на одном сервере с модулем)
-        mysql_pass: ""
+.. include:: ../../includes/install/modules/remote_database.rst
 
 Далее можно запускать процесс установки:
 
@@ -68,5 +25,11 @@ DBUpdate
 
   ansible-playbook mbdbupdate.yml
 
-
 .. include:: ../../footer_links.rst
+
+.. toctree::
+	:hidden:
+	:maxdepth: 5
+	:titlesonly:
+
+	mbdbupdate/manual_install

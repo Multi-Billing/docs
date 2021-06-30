@@ -117,7 +117,7 @@ MBCabinetAPI
    * - /var/bill/mbcabapi/<version>/add_to_chroot.sh
      - скрипт для добавления программ в изолированную chroot среду
 
-.. list-table:: модуль mbstat
+.. list-table:: модуль mbcabinet
    :widths: 100 100
    :header-rows: 1
 
@@ -149,9 +149,9 @@ MBCabinetAPI
      - файл с md5 суммой загруженной версии обновлений
    * - /var/bill/logs/mbcabapi
      - директория логов модуля
-   * - /var/bill/logs/mbcabapi/mbstat.log
+   * - /var/bill/logs/mbcabapi/mbcabinet.log
      - основной лог модуля
-   * - /var/bill/logs/mbcabapi/mbstat.debug
+   * - /var/bill/logs/mbcabapi/mbcabinet.debug
      - debug лог модуля
    * - /var/bill/logs/mbcabapi/update.log
      - лог обновлений модуля

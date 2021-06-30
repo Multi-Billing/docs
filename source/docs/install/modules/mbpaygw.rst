@@ -1,7 +1,7 @@
-MBStat
+mbpaygw
 ###########################################
 
-Модуль личного кабинета абонента
+Модуль приема платежей
 
 .. include:: ../../includes/ansible_install.rst
 
@@ -12,8 +12,8 @@ MBStat
 
 .. code-block:: bash
 
-  wget http://setup.multi-billing.pro/mbstat.tar.gz
-  tar zxf mbstat.tar.gz
+  wget http://setup.multi-billing.pro/mbpaygw.tar.gz
+  tar zxf mbpaygw.tar.gz
 
 .. include:: ../../includes/install/modules/remote_billing_modules.rst
 
@@ -23,7 +23,7 @@ MBStat
 
 .. code-block:: sh
 
-  ansible-playbook mbstat.yml
+  ansible-playbook mbpaygw.yml
 
 
 .. include:: ../../footer_links.rst
@@ -33,4 +33,4 @@ MBStat
 	:maxdepth: 5
 	:titlesonly:
 
-	mbstat/manual_install
+	mbpaygw/manual_install

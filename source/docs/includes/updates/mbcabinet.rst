@@ -1,7 +1,7 @@
-Загрузщик обновлений базы
+Загрузщик обновлений
 *************************************************
 
-Варианты запуска файла ``/var/bill/mbdbupdate/<version>/mbdbupdate_update.sh``
+Варианты запуска файла ``/var/bill/mbcabinet/<version>/updates/mbcabinet_update.sh``
 
 .. list-table:: 
    :widths: 100 100

@@ -1,7 +1,7 @@
-Загрузщик обновлений
+Загрузщик обновлений базы
 *************************************************
 
-Варианты запуска файла ``/var/bill/mbkernel/<version>/mbkernel_update.sh``
+Варианты запуска файла ``/var/bill/mbsql/<version>/mbsql_update.sh``
 
 .. list-table:: 
    :widths: 100 100

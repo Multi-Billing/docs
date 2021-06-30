@@ -1,7 +1,7 @@
 Файл конфигурации
 *************************************************
 
-Файл расположен по пути ``/var/bill/mbdbupdate/<version>/config/config.xml``
+Файл расположен по пути ``/var/bill/mbsql/<version>/config/config.xml``
 
 .. code-block:: xml
 

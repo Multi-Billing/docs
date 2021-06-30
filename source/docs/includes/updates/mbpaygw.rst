@@ -1,7 +1,7 @@
 Загрузщик обновлений
 *************************************************
 
-Варианты запуска файла ``/var/bill/mbpayments/<version>/updates/mbpayments_update.sh``
+Варианты запуска файла ``/var/bill/mbpaygw/<version>/updates/mbpaygw_update.sh``
 
 .. list-table:: 
    :widths: 100 100

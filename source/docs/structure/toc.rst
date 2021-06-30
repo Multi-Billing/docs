@@ -7,21 +7,21 @@
 	├── backup
 	│   ├── mbadmin
 	│   ├── mbcabapi
-	│   ├── mbdbupdate
-	│   ├── mbkernel
-	│   ├── mbpayments
-	│   ├── mbqueue
-	│   └── mbstat
+	│   ├── mbsql
+	│   ├── mbcore
+	│   ├── mbpaygw
+	│   ├── mbcron
+	│   └── mbcabinet
 	├── mrtg
 	├── license
 	├── logs
 	│   ├── mbadmin
 	│   ├── mbcabapi
-	│   ├── mbdbupdate
-	│   ├── mbkernel
-	│   ├── mbpayments
-	│   ├── mbqueue
-	│   └── mbstat
+	│   ├── mbsql
+	│   ├── mbcore
+	│   ├── mbpaygw
+	│   ├── mbcron
+	│   └── mbcabinet
 	├── mbadmin
 	│   ├── chroot
 	│   │   ├── production
@@ -34,22 +34,22 @@
 	│   │   └── testing
 	│   ├── production
 	│   └── testing
-	├── mbdbupdate
+	├── mbsql
 	│   ├── production
 	│   └── testing
-	├── mbkernel
+	├── mbcore
 	│   ├── production
 	│   └── testing
-	├── mbpayments
+	├── mbpaygw
 	│   ├── chroot
 	│   │   ├── production
 	│   │   └── testing
 	│   ├── production
 	│   └── testing
-	├── mbqueue
+	├── mbcron
 	│   ├── production
 	│   └── testing
-	├── mbstat
+	├── mbcabinet
 	│   ├── chroot
 	│   │   ├── production
 	│   │   └── testing
@@ -83,19 +83,19 @@
     :doc:`/var/bill/mbcabapi <mbcabapi>`
         Директория модуля API Личного кабинета пользователей, имеет chroot среду и production/testing версии модуля
 
-    :doc:`/var/bill/mbdbupdate <mbdbupdate>`
+    :doc:`/var/bill/mbsql <mbsql>`
         Директория модуля обновления структуры базы данных, имеет production/testing версии модуля
 
-    :doc:`/var/bill/mbkernel <mbkernel>`
+    :doc:`/var/bill/mbcore <mbcore>`
         Директория модуля ядра биллинга, имеет production/testing версии модуля
 
-    :doc:`/var/bill/mbpayments <mbpayments>`
+    :doc:`/var/bill/mbpaygw <mbpaygw>`
         Директория модуля приема платежей, имеет chroot среду и production/testing версии модуля
 
-    :doc:`/var/bill/mbqueue <mbqueue>`
+    :doc:`/var/bill/mbcron <mbcron>`
         Директория модуля заданий и выполнения заданий очереди, имеет production/testing версии модуля
 
-    :doc:`/var/bill/mbstat <mbstat>`
+    :doc:`/var/bill/mbcabinet <mbcabinet>`
         Директория модуля Личного кабинета пользователей, имеет chroot среду и production/testing версии модуля
 
 
@@ -105,13 +105,13 @@
 	:titlesonly:
 
 	database
-	mbdbupdate
+	mbsql
 	mbradius
-	mbkernel
-	mbqueue
+	mbcore
+	mbcron
 	mbadmin
-	mbpayments
-	mbstat
+	mbpaygw
+	mbcabinet
 	mbcabapi
 
 .. include:: ../footer_links.rst

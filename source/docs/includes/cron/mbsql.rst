@@ -1,7 +1,7 @@
 Задания cron
 *************************************************
 
-- Файл с заданиями модуля расположен по пути ``/etc/cron.d/mbpayments`` и содержит задания
+- Файл с заданиями модуля расположен по пути ``/etc/cron.d/mbsql`` и содержит задания
 
   * запуск обновления production версии модуля
 
@@ -19,4 +19,5 @@
     # *  *  *  *  * user-name  command to be executed
 
     # update
-    05 6 * * * root /var/bill/mbpayments/production/updates/mbpayments_update.sh
+    05 6 * * * root /var/bill/mbsql/production/mbsql_update.sh
+

@@ -6,11 +6,11 @@
 	:titlesonly:
 
 	database.rst
-	mbdbupdate.rst
+	mbsql.rst
 	mbradius.rst
-	mbkernel.rst
-	mbqueue.rst
+	mbcore.rst
+	mbcron.rst
 	mbadmin.rst
-	mbpayments.rst
-	mbstat.rst
+	mbpaygw.rst
+	mbcabinet.rst
 	mbcabapi.rst

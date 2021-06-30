@@ -9,16 +9,16 @@ DBUpdate
 .. code-block:: bash
 
 	/var/bill
-	├── mbdbupdate
+	├── mbsql
 	│   ├── production
 	│   │   ├── config
 	│   │   │   └── config.xml
 	│   │   ├── install_update.sh
 	│   │   ├── logs
 	│   │   │   └── update.log
-	│   │   ├── mbdbupdate.current.checksum
-	│   │   ├── mbdbupdate.downloaded.checksum
-	│   │   ├── mbdbupdate_update.sh
+	│   │   ├── mbsql.current.checksum
+	│   │   ├── mbsql.downloaded.checksum
+	│   │   ├── mbsql_update.sh
 	│   │   └── sqlupd
 	│   │       ├── db
 	│   │       │   └── deltas
@@ -39,9 +39,9 @@ DBUpdate
 	│       ├── install_update.sh
 	│       ├── logs
 	│       │   └── update.log
-	│       ├── mbdbupdate.current.checksum
-	│       ├── mbdbupdate.downloaded.checksum
-	│       ├── mbdbupdate_testing.sh
+	│       ├── mbsql.current.checksum
+	│       ├── mbsql.downloaded.checksum
+	│       ├── mbsql_testing.sh
 	│       └── sqlupd
 	│           ├── db
 	│           │   └── deltas
@@ -57,7 +57,7 @@ DBUpdate
 	│           ├── library
 	│           └── public
 	├── logs
-	│   ├── mbdbupdate
+	│   ├── mbsql
 	│   │   └── update.log
 
 Описание директорий и файлов
@@ -71,29 +71,29 @@ DBUpdate
      - описание
    * - /var/bill
      - домашняя директория биллинга
-   * - /var/bill/mbdbupdate
+   * - /var/bill/mbsql
      - домашняя директория модуля
-   * - /var/bill/mbdbupdate/production
+   * - /var/bill/mbsql/production
      - production версия модуля
-   * - /var/bill/mbdbupdate/testing
+   * - /var/bill/mbsql/testing
      - testing версия модуля
    * - <version>/logs
-     - директория логов (подключена из /var/bill/logs/mbdbupdate)
+     - директория логов (подключена из /var/bill/logs/mbsql)
    * - <version>/sqlupd
      - директория с файлами обновления базы
    * - <version>/config/config.xml
      - файл конфига модуля
    * - <version>/install_update.sh
      - установщик изменений базы
-   * - <version>/mbdbupdate_update.sh
+   * - <version>/mbsql_update.sh
      - загрузщик обновлений базы
-   * - <version>/mbdbupdate.current.checksum
+   * - <version>/mbsql.current.checksum
      - файл с md5 суммой текущей версии обновлений
-   * - <version>/mbdbupdate.downloaded.checksum
+   * - <version>/mbsql.downloaded.checksum
      - файл с md5 суммой загруженной версии обновлений 
 
 
-.. include:: ../includes/config/mbdbpdate.rst
-.. include:: ../includes/updates/mbdbpdate.rst
-.. include:: ../includes/cron/mbdbpdate.rst
+.. include:: ../includes/config/mbsql.rst
+.. include:: ../includes/updates/mbsql.rst
+.. include:: ../includes/cron/mbsql.rst
 .. include:: ../footer_links.rst

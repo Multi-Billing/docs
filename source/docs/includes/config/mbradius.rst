@@ -32,7 +32,7 @@
   use constant	RADIUS_L_INFO=>        3;# /* info log   */
   use constant	RADIUS_L_ERROR=>       4;# /* error log  */
 
-  # mbkernel daemon IP address and port
+  # mbcore daemon IP address and port
   my $host="127.0.0.1";
   my $port="22007";
 

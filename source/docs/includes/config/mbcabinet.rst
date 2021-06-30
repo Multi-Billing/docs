@@ -1,7 +1,7 @@
 Файл конфигурации
 *************************************************
 
-Файл расположен по пути ``/var/bill/mbstat/<version>/config/config.xml``
+Файл расположен по пути ``/var/bill/mbcabinet/<version>/config/config.xml``
 
 .. code-block:: xml
 
@@ -16,8 +16,8 @@
         <timezone>Europe/Kiev</timezone>
         <partialUTF8>false</partialUTF8>
         <debug>false</debug>
-        <error_log>/var/bill/logs/mbstat.log</error_log>
-        <debug_log>/var/bill/logs/mbstat.debug</debug_log>
+        <error_log>/var/bill/logs/mbcabinet.log</error_log>
+        <debug_log>/var/bill/logs/mbcabinet.debug</debug_log>
       </parameters>
     </config>
 

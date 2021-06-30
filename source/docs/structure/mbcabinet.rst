@@ -1,4 +1,4 @@
-MBStat
+mbcabinet
 ###########################################
 
 Модуль личного кабинета абонента
@@ -9,7 +9,7 @@ MBStat
 .. code-block:: bash
 
     /var/bill
-    ├── mbstat
+    ├── mbcabinet
     │   ├── chroot
     │   │   ├── production
     │   │   │   ├── bin -> usr/bin
@@ -32,15 +32,15 @@ MBStat
     │   │   │   │       └── zoneinfo
     │   │   │   └── var
     │   │   │       ├── bill
-    │   │   │       │   ├── config -> /var/bill/mbstat/production/config
-    │   │   │       │   └── logs -> /var/bill/logs/mbstat
+    │   │   │       │   ├── config -> /var/bill/mbcabinet/production/config
+    │   │   │       │   └── logs -> /var/bill/logs/mbcabinet
     │   │   │       ├── lib
     │   │   │       │   └── php
     │   │   │       │       └── session
     │   │   │       ├── log
     │   │   │       │   └── php-fpm
     │   │   │       └── www
-    │   │   │           └── mbstat
+    │   │   │           └── mbcabinet
     │   │   │               ├── data
     │   │   │               |   └── ...
     │   │   │               └── index.php
@@ -65,15 +65,15 @@ MBStat
     │   │       │       └── zoneinfo
     │   │       └── var
     │   │           ├── bill
-    │   │           │   ├── config -> /var/bill/mbstat/testing/config
-    │   │           │   └── logs -> /var/bill/logs/mbstat
+    │   │           │   ├── config -> /var/bill/mbcabinet/testing/config
+    │   │           │   └── logs -> /var/bill/logs/mbcabinet
     │   │           ├── lib
     │   │           │   └── php
     │   │           │       └── session
     │   │           ├── log
     │   │           │   └── php-fpm
     │   │           └── www
-    │   │               └── mbstat
+    │   │               └── mbcabinet
     │   │                   ├── data
     │   │                   |   └── ...
     │   │                   └── index.php
@@ -94,9 +94,9 @@ MBStat
     │   │   │   │           └── webfonts
     │   │   │   └── index.php
     │   │   └── updates
-    │   │       ├── mbstat.current.checksum
-    │   │       ├── mbstat.downloaded.checksum
-    │   │       └── mbstat_updater.sh
+    │   │       ├── mbcabinet.current.checksum
+    │   │       ├── mbcabinet.downloaded.checksum
+    │   │       └── mbcabinet_updater.sh
     │   └── testing
     │       ├── add_to_chroot.sh
     │       ├── config
@@ -114,13 +114,13 @@ MBStat
     │       │   │           └── webfonts
     │       │   └── index.php
     │       └── updates
-    │           ├── mbstat.current.checksum
-    │           ├── mbstat.downloaded.checksum
-    │           └── mbstat_testing.sh
+    │           ├── mbcabinet.current.checksum
+    │           ├── mbcabinet.downloaded.checksum
+    │           └── mbcabinet_testing.sh
     ├── logs
-    │   ├── mbstat
-    │   │   ├── mbstat.debug
-    │   │   ├── mbstat.log
+    │   ├── mbcabinet
+    │   │   ├── mbcabinet.debug
+    │   │   ├── mbcabinet.log
     │   │   └── update.log
 
 Описание директорий и файлов
@@ -132,18 +132,18 @@ MBStat
 
    * - файл/директория
      - описание
-   * - /var/bill/mbstat/chroot/<version>
+   * - /var/bill/mbcabinet/chroot/<version>
      - корневая директория chroot среды
    * - chroot/<version>/var/bill/config
-     - примонтированная директория системы /var/bill/mbstat/<version>/config
+     - примонтированная директория системы /var/bill/mbcabinet/<version>/config
    * - chroot/<version>/var/bill/logs
-     - примонтированная директория системы /var/bill/logs/mbstat
-   * - chroot/<version>/var/www/mbstat
-     - примонтированная директория системы /var/bill/mbstat/<version>/public
-   * - /var/bill/mbstat/<version>/add_to_chroot.sh
+     - примонтированная директория системы /var/bill/logs/mbcabinet
+   * - chroot/<version>/var/www/mbcabinet
+     - примонтированная директория системы /var/bill/mbcabinet/<version>/public
+   * - /var/bill/mbcabinet/<version>/add_to_chroot.sh
      - скрипт для добавления программ в изолированную chroot среду
 
-.. list-table:: модуль mbstat
+.. list-table:: модуль mbcabinet
    :widths: 100 100
    :header-rows: 1
 
@@ -151,13 +151,13 @@ MBStat
      - описание
    * - /var/bill
      - домашняя директория биллинга
-   * - /var/bill/mbstat
+   * - /var/bill/mbcabinet
      - домашняя директория модуля
-   * - /var/bill/mbstat/production
+   * - /var/bill/mbcabinet/production
      - production версия модуля
-   * - /var/bill/mbstat/testing
+   * - /var/bill/mbcabinet/testing
      - testing версия модуля
-   * - /var/bill/backup/mbstat
+   * - /var/bill/backup/mbcabinet
      - директория для бекапов
    * - <version>/config/config.xml
      - файл конфига модуля
@@ -167,23 +167,23 @@ MBStat
      - файл с кодом модуля
    * - <version>/updates
      - директория с файлами обновления
-   * - <version>/updates/mbstat_update.sh
+   * - <version>/updates/mbcabinet_update.sh
      - загрузчик и установщик обновлений
-   * - <version>/updates/mbstat.current.checksum
+   * - <version>/updates/mbcabinet.current.checksum
      - файл с md5 суммой текущей версии обновлений
-   * - <version>/updates/mbstat.downloaded.checksum
+   * - <version>/updates/mbcabinet.downloaded.checksum
      - файл с md5 суммой загруженной версии обновлений
-   * - /var/bill/logs/mbstat
+   * - /var/bill/logs/mbcabinet
      - директория логов модуля
-   * - /var/bill/logs/mbstat/mbstat.log
+   * - /var/bill/logs/mbcabinet/mbcabinet.log
      - основной лог модуля
-   * - /var/bill/logs/mbstat/mbstat.debug
+   * - /var/bill/logs/mbcabinet/mbcabinet.debug
      - debug лог модуля
-   * - /var/bill/logs/mbstat/update.log
+   * - /var/bill/logs/mbcabinet/update.log
      - лог обновлений модуля
 
-.. include:: ../includes/config/mbstat.rst
-.. include:: ../includes/updates/mbstat.rst
-.. include:: ../includes/cron/mbstat.rst
+.. include:: ../includes/config/mbcabinet.rst
+.. include:: ../includes/updates/mbcabinet.rst
+.. include:: ../includes/cron/mbcabinet.rst
 
 .. include:: ../footer_links.rst

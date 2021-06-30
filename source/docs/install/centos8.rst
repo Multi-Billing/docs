@@ -13,11 +13,11 @@
 Модули биллинга:
 
 * mbadmin
-* mbstat
-* mbkernel
-* mbdbupdate
-* mbqueue
-* mbpayments
+* mbcabinet
+* mbcore
+* mbsql
+* mbcron
+* mbpaygw
 
 А так же вспомогательные пакеты вместе с их зависимостями:
 

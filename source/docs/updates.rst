@@ -33,24 +33,24 @@
    * - mbadmin - frontend
      - `mbadmin_frontend_update.sh <http://free.update.multi-billing.pro/mbadmin_frontend_update.sh>`_
      - `mbadmin_frontend_testing.sh <http://free.current.multi-billing.pro/mbadmin_frontend_testing.sh>`_
-   * - mbkernel
-     - `mbkernel_update.sh <http://free.update.multi-billing.pro/mbkernel_update.sh>`_
-     - `mbkernel_testing.sh <http://free.current.multi-billing.pro/mbkernel_testing.sh>`_
-   * - mbdbupdate
-     - `mbdbupdate_update.sh <http://free.update.multi-billing.pro/mbdbupdate_update.sh>`_
-     - `mbdbupdate_testing.sh <http://free.current.multi-billing.pro/mbdbupdate_testing.sh>`_
-   * - mbqueue
-     - `mbqueue_update.sh <http://free.update.multi-billing.pro/mbqueue_update.sh>`_
-     - `mbqueue_testing.sh <http://free.current.multi-billing.pro/mbqueue_testing.sh>`_
-   * - mbpayments
-     - `mbpayments_update.sh <http://free.update.multi-billing.pro/mbpayments_update.sh>`_
-     - `mbpayments_testing.sh <http://free.current.multi-billing.pro/mbpayments_testing.sh>`_
+   * - mbcore
+     - `mbcore_update.sh <http://free.update.multi-billing.pro/mbcore_update.sh>`_
+     - `mbcore_testing.sh <http://free.current.multi-billing.pro/mbcore_testing.sh>`_
+   * - mbsql
+     - `mbsql_update.sh <http://free.update.multi-billing.pro/mbsql_update.sh>`_
+     - `mbsql_testing.sh <http://free.current.multi-billing.pro/mbsql_testing.sh>`_
+   * - mbcron
+     - `mbcron_update.sh <http://free.update.multi-billing.pro/mbcron_update.sh>`_
+     - `mbcron_testing.sh <http://free.current.multi-billing.pro/mbcron_testing.sh>`_
+   * - mbpaygw
+     - `mbpaygw_update.sh <http://free.update.multi-billing.pro/mbpaygw_update.sh>`_
+     - `mbpaygw_testing.sh <http://free.current.multi-billing.pro/mbpaygw_testing.sh>`_
    * - mbcabapi
      - `mbcabapi_update.sh <http://free.update.multi-billing.pro/mbcabapi_update.sh>`_
      - `mbcabapi_testing.sh <http://free.current.multi-billing.pro/mbcabapi_testing.sh>`_
-   * - mbstat
-     - `mbstat_update.sh <http://free.update.multi-billing.pro/mbstat_update.sh>`_
-     - `mbstat_testing.sh <http://free.current.multi-billing.pro/mbstat_testing.sh>`_
+   * - mbcabinet
+     - `mbcabinet_update.sh <http://free.update.multi-billing.pro/mbcabinet_update.sh>`_
+     - `mbcabinet_testing.sh <http://free.current.multi-billing.pro/mbcabinet_testing.sh>`_
 
 Автоматическое обновлене
 *******************************************
@@ -78,7 +78,7 @@
 
 .. code-block:: sh
 
-  tar -xzvf /var/bill/backup/mbstat/mbstat_production.2020-09-28_11-53.tar.gz /var/bill/mbstat/production/public
+  tar -xzvf /var/bill/backup/mbcabinet/mbcabinet_production.2020-09-28_11-53.tar.gz /var/bill/mbcabinet/production/public
 
 
 Тестовые обновления
@@ -90,5 +90,5 @@
 
 .. code-block:: sh
 
-  bash /var/bill/mbstat/testing/update/mbstat_testing.sh
+  bash /var/bill/mbcabinet/testing/update/mbcabinet_testing.sh
 

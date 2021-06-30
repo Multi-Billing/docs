@@ -1,4 +1,4 @@
-MBQueue
+mbcron
 ###########################################
 
 Модуль обработки отложенных заданий и команд
@@ -9,7 +9,7 @@ MBQueue
 .. code-block:: bash
 
     /var/bill
-    ├── mbqueue
+    ├── mbcron
     │   ├── production
     │   │   ├── config
     │   │   │   └── config.xml
@@ -26,9 +26,9 @@ MBQueue
     │   │   │   ├── update_dev.sh
     │   │   │   └── update_ram.sh
     │   │   └── updates
-    │   │       ├── mbqueue.current.checksum
-    │   │       ├── mbqueue.downloaded.checksum
-    │   │       └── mbqueue_update.sh
+    │   │       ├── mbcron.current.checksum
+    │   │       ├── mbcron.downloaded.checksum
+    │   │       └── mbcron_update.sh
     │   └── testing
     │       ├── config
     │       │   └── config.xml
@@ -45,13 +45,13 @@ MBQueue
     │       │   ├── update_dev.sh
     │       │   └── update_ram.sh
     │       └── updates
-    │           ├── mbqueue.current.checksum
-    │           ├── mbqueue.downloaded.checksum
-    │           └── mbqueue_testing.sh
+    │           ├── mbcron.current.checksum
+    │           ├── mbcron.downloaded.checksum
+    │           └── mbcron_testing.sh
     ├── logs
-    │   ├── mbqueue
-    │   │   ├── mbqueue.debug
-    │   │   ├── mbqueue.log
+    │   ├── mbcron
+    │   │   ├── mbcron.debug
+    │   │   ├── mbcron.log
     │   │   └── update.log
 
 Описание директорий и файлов
@@ -65,13 +65,13 @@ MBQueue
      - описание
    * - /var/bill
      - домашняя директория биллинга
-   * - /var/bill/mbqueue
+   * - /var/bill/mbcron
      - домашняя директория модуля
-   * - /var/bill/mbqueue/production
+   * - /var/bill/mbcron/production
      - production версия модуля
-   * - /var/bill/mbqueue/testing
+   * - /var/bill/mbcron/testing
      - testing версия модуля
-   * - /var/bill/backup/mbqueue
+   * - /var/bill/backup/mbcron
      - директория для бекапов
    * - <version>/config/config.xml
      - файл конфига модуля
@@ -93,23 +93,23 @@ MBQueue
      - bash скрипт с командами генерации mrtg графиков
    * - <version>/updates
      - директория с файлами обновления
-   * - <version>/updates/mbqueue_update.sh
+   * - <version>/updates/mbcron_update.sh
      - загрузчик и установщик обновлений
-   * - <version>/updates/mbqueue.current.checksum
+   * - <version>/updates/mbcron.current.checksum
      - файл с md5 суммой текущей версии обновлений
-   * - <version>/updates/mbqueue.downloaded.checksum
+   * - <version>/updates/mbcron.downloaded.checksum
      - файл с md5 суммой загруженной версии обновлений
-   * - /var/bill/logs/mbqueue
+   * - /var/bill/logs/mbcron
      - директория логов модуля
-   * - /var/bill/logs/mbqueue/mbqueue.log
+   * - /var/bill/logs/mbcron/mbcron.log
      - основной лог модуля
-   * - /var/bill/logs/mbqueue/mbqueue.debug
+   * - /var/bill/logs/mbcron/mbcron.debug
      - debug лог модуля
-   * - /var/bill/logs/mbqueue/update.log
+   * - /var/bill/logs/mbcron/update.log
      - лог обновлений модуля
 
-.. include:: ../includes/config/mbqueue.rst
-.. include:: ../includes/updates/mbqueue.rst
-.. include:: ../includes/cron/mbqueue.rst
+.. include:: ../includes/config/mbcron.rst
+.. include:: ../includes/updates/mbcron.rst
+.. include:: ../includes/cron/mbcron.rst
 
 .. include:: ../footer_links.rst

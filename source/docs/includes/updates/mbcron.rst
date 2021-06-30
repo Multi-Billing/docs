@@ -1,7 +1,7 @@
 Загрузщик обновлений
 *************************************************
 
-Варианты запуска файла ``/var/bill/mbqueue/<version>/mbqueue_update.sh``
+Варианты запуска файла ``/var/bill/mbcron/<version>/mbcron_update.sh``
 
 .. list-table:: 
    :widths: 100 100

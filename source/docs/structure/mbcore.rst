@@ -1,4 +1,4 @@
-MBKernel
+mbcore
 ###########################################
 
 Модуль используется для обработки Freeradius запросов (Access-Request/Accounting-Request) при авторизации абонентов.
@@ -10,7 +10,7 @@ MBKernel
 .. code-block:: bash
 
     /var/bill
-    ├── mbkernel
+    ├── mbcore
     │   ├── production
     │   │   ├── config
     │   │   │   └── config.xml
@@ -18,7 +18,7 @@ MBKernel
     │   │   └── updates
     │   │       ├── kernel.current.checksum
     │   │       ├── kernel.downloaded.checksum
-    │   │       └── mbkernel_update.sh
+    │   │       └── mbcore_update.sh
     │   └── testing
     │       ├── config
     │       │   └── config.xml
@@ -26,11 +26,11 @@ MBKernel
     │       └── updates
     │           ├── kernel.current.checksum
     │           ├── kernel.downloaded.checksum
-    │           └── mbkernel_testing.sh
+    │           └── mbcore_testing.sh
     ├── logs
-    │   ├── mbkernel
-    │   │   ├── mbkernel.debug
-    │   │   ├── mbkernel.log
+    │   ├── mbcore
+    │   │   ├── mbcore.debug
+    │   │   ├── mbcore.log
     │   │   └── update.log
 
 Описание директорий и файлов
@@ -44,35 +44,35 @@ MBKernel
      - описание
    * - /var/bill
      - домашняя директория биллинга
-   * - /var/bill/mbkernel
+   * - /var/bill/mbcore
      - домашняя директория модуля
-   * - /var/bill/mbkernel/production
+   * - /var/bill/mbcore/production
      - production версия модуля
-   * - /var/bill/mbkernel/testing
+   * - /var/bill/mbcore/testing
      - testing версия модуля
-   * - /var/bill/backup/mbdbupdate
+   * - /var/bill/backup/mbsql
      - директория для бекапов
    * - <version>/config/config.xml
      - файл конфига модуля
    * - <version>/update
      - директория с файлами обновления
-   * - <version>/update/mbkernel_update.sh
+   * - <version>/update/mbcore_update.sh
      - загрузчик и установщик обновлений
    * - <version>/update/kernel.current.checksum
      - файл с md5 суммой текущей версии обновлений
    * - <version>/update/kernel.downloaded.checksum
      - файл с md5 суммой загруженной версии обновлений
-   * - /var/bill/logs/mbkernel
+   * - /var/bill/logs/mbcore
      - директория логов модуля
-   * - /var/bill/logs/mbkernel/mbkernel.log
+   * - /var/bill/logs/mbcore/mbcore.log
      - основной лого модуля
-   * - /var/bill/logs/mbkernel/debug.log
+   * - /var/bill/logs/mbcore/debug.log
      - debug лог модуля
-   * - /var/bill/logs/mbkernel/update.log
+   * - /var/bill/logs/mbcore/update.log
      - лог обновлений модуля
 
-.. include:: ../includes/config/mbkernel.rst
-.. include:: ../includes/updates/mbkernel.rst
-.. include:: ../includes/cron/mbkernel.rst
+.. include:: ../includes/config/mbcore.rst
+.. include:: ../includes/updates/mbcore.rst
+.. include:: ../includes/cron/mbcore.rst
 
 .. include:: ../footer_links.rst

@@ -21,33 +21,33 @@
 
                 GRANT SELECT ON bill.radnas TO 'role_mbradius'
 
-    **mbkernel**
-        Используется для модуля ядра билинга, имеет свою роль role_mbkernel с правами:
+    **mbcore**
+        Используется для модуля ядра билинга, имеет свою роль role_mbcore с правами:
 
             .. code-block:: sql
 
-                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbkernel'
+                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbcore'
 
-    **mbpayments**
-        Используется для модуля платежных систем, имеет свою роль role_mbpayments с правами:
-
-            .. code-block:: sql
-
-                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbpayments'
-
-    **mbqueue**
-        Используется для модуля очереди, имеет свою роль role_mbqueue с правами:
+    **mbpaygw**
+        Используется для модуля платежных систем, имеет свою роль role_mbpaygw с правами:
 
             .. code-block:: sql
 
-                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbqueue'
+                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbpaygw'
 
-    **mbstat**
-        Используется для модуля личного кабинета, имеет свою роль role_mbstat с правами:
+    **mbcron**
+        Используется для модуля очереди, имеет свою роль role_mbcron с правами:
 
             .. code-block:: sql
 
-                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbstat'
+                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbcron'
+
+    **mbcabinet**
+        Используется для модуля личного кабинета, имеет свою роль role_mbcabinet с правами:
+
+            .. code-block:: sql
+
+                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbcabinet'
 
     **mbcabapi**
         Используется для модуля API личного кабинета, имеет свою роль role_mbcabapi с правами:
@@ -56,12 +56,12 @@
 
                 GRANT ALL PRIVILEGES ON bill.* TO 'role_mbcabapi'
 
-    **mbdbupdate**
-        Используется для модуля обновления структуры базы биллинга, имеет свою роль mbdbupdate с правами:
+    **mbsql**
+        Используется для модуля обновления структуры базы биллинга, имеет свою роль mbsql с правами:
 
             .. code-block:: sql
 
-                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbdbupdate'
+                GRANT ALL PRIVILEGES ON bill.* TO 'role_mbsql'
 
     .. important:: Указанные наборы привилегий не конечные и могут изменяться с выходом новых обновлений.
 

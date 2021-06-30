@@ -86,36 +86,36 @@
     login=mbadmin
     password=vsoty.2G=3CA6FM3
     # END mbadmin database info
-    # BEGIN mbstat database info
+    # BEGIN mbcabinet database info
     ip=127.0.0.1
-    login=mbstat
+    login=mbcabinet
     password==2Lj.D0BO4vqpK1z
-    # END mbstat database info
-    # BEGIN mbkernel database info
+    # END mbcabinet database info
+    # BEGIN mbcore database info
     ip=127.0.0.1
-    login=mbkernel
+    login=mbcore
     password=On=H=P33ahGbGm34
-    # END mbkernel database info
+    # END mbcore database info
     # BEGIN mbradius database info
     ip=127.0.0.1
     login=mbradius
     password=KuByR60=kvJ9Y4x=
     # END mbradius database info
-    # BEGIN mbpayments database info
+    # BEGIN mbpaygw database info
     ip=127.0.0.1
-    login=mbpayments
+    login=mbpaygw
     password=w=2E9dxX3_liMJ1R
-    # END mbpayments database info
-    # BEGIN mbqueue database info
+    # END mbpaygw database info
+    # BEGIN mbcron database info
     ip=127.0.0.1
-    login=mbqueue
+    login=mbcron
     password=Y_s_t202yjIu4SVT
-    # END mbqueue database info
-    # BEGIN mbdbupdate database info
+    # END mbcron database info
+    # BEGIN mbsql database info
     ip=127.0.0.1
-    login=mbdbupdate
+    login=mbsql
     password=zEwi8OG-1U2wx9_W
-    # END mbdbupdate database info
+    # END mbsql database info
     # BEGIN mbcabapi database info
     ip=127.0.0.1
     login=mbcabapi

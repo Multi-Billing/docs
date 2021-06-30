@@ -1,7 +1,7 @@
-MBKernel
+DBUpdate
 ###########################################
 
-Модуль используется для обработки Freeradius запросов (Access-Request/Accounting-Request) при авторизации абонентов.
+Модуль используется для обновления структуры базы данных при обновлении билинга
 
 .. include:: ../../includes/ansible_install.rst
 
@@ -12,8 +12,8 @@ MBKernel
 
 .. code-block:: bash
 
-  wget http://setup.multi-billing.pro/mbkernel.tar.gz
-  tar zxf mbkernel.tar.gz
+  wget http://setup.multi-billing.pro/mbsql.tar.gz
+  tar zxf mbsql.tar.gz
 
 .. include:: ../../includes/install/modules/remote_billing_modules.rst
 
@@ -23,8 +23,7 @@ MBKernel
 
 .. code-block:: sh
 
-  ansible-playbook mbkernel.yml
-
+  ansible-playbook mbsql.yml
 
 .. include:: ../../footer_links.rst
 
@@ -33,4 +32,4 @@ MBKernel
 	:maxdepth: 5
 	:titlesonly:
 
-	mbkernel/manual_install
+	mbsql/manual_install

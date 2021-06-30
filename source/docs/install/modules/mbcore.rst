@@ -1,7 +1,7 @@
-MBPayments
+mbcore
 ###########################################
 
-Модуль приема платежей
+Модуль используется для обработки Freeradius запросов (Access-Request/Accounting-Request) при авторизации абонентов.
 
 .. include:: ../../includes/ansible_install.rst
 
@@ -12,8 +12,8 @@ MBPayments
 
 .. code-block:: bash
 
-  wget http://setup.multi-billing.pro/mbpayments.tar.gz
-  tar zxf mbpayments.tar.gz
+  wget http://setup.multi-billing.pro/mbcore.tar.gz
+  tar zxf mbcore.tar.gz
 
 .. include:: ../../includes/install/modules/remote_billing_modules.rst
 
@@ -23,7 +23,7 @@ MBPayments
 
 .. code-block:: sh
 
-  ansible-playbook mbpayments.yml
+  ansible-playbook mbcore.yml
 
 
 .. include:: ../../footer_links.rst
@@ -33,4 +33,4 @@ MBPayments
 	:maxdepth: 5
 	:titlesonly:
 
-	mbpayments/manual_install
+	mbcore/manual_install

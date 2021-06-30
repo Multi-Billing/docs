@@ -1,7 +1,7 @@
 Файл конфигурации
 *************************************************
 
-Файл расположен по пути ``/var/bill/mbkernel/<version>/config/config.xml``
+Файл расположен по пути ``/var/bill/mbcore/<version>/config/config.xml``
 
 .. code-block:: xml
 
@@ -16,10 +16,10 @@
         <kernel>
           <ip>127.0.0.1</ip>
           <port>22007</port>
-          <pid>/var/run/mbkernel/kernel_production.pid</pid>
-          <log>/var/bill/logs/mbkernel/mbkernel.log</log>
+          <pid>/var/run/mbcore/kernel_production.pid</pid>
+          <log>/var/bill/logs/mbcore/mbcore.log</log>
           <debug>false</debug>
-          <debug_log>/var/bill/logs/mbkernel/debug.log</debug_log>
+          <debug_log>/var/bill/logs/mbcore/debug.log</debug_log>
           <request_timing>3.000001</request_timing>
         </kernel>
       <timezone>Europe/Kiev</timezone>

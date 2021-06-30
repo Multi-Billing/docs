@@ -1,4 +1,4 @@
-MBQueue
+mbcron
 ###########################################
 
 Модуль обработки отложенных заданий и команд
@@ -12,8 +12,8 @@ MBQueue
 
 .. code-block:: bash
 
-  wget http://setup.multi-billing.pro/mbqueue.tar.gz
-  tar zxf mbqueue.tar.gz
+  wget http://setup.multi-billing.pro/mbcron.tar.gz
+  tar zxf mbcron.tar.gz
 
 .. include:: ../../includes/install/modules/remote_billing_modules.rst
 
@@ -23,7 +23,7 @@ MBQueue
 
 .. code-block:: sh
 
-  ansible-playbook mbqueue.yml
+  ansible-playbook mbcron.yml
 
 
 .. include:: ../../footer_links.rst
@@ -33,4 +33,4 @@ MBQueue
 	:maxdepth: 5
 	:titlesonly:
 
-	mbqueue/manual_install
+	mbcron/manual_install

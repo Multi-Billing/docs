@@ -1,7 +1,7 @@
-DBUpdate
+mbcabinet
 ###########################################
 
-Модуль используется для обновления структуры базы данных при обновлении билинга
+Модуль личного кабинета абонента
 
 .. include:: ../../includes/ansible_install.rst
 
@@ -12,8 +12,8 @@ DBUpdate
 
 .. code-block:: bash
 
-  wget http://setup.multi-billing.pro/mbdbupdate.tar.gz
-  tar zxf mbdbupdate.tar.gz
+  wget http://setup.multi-billing.pro/mbcabinet.tar.gz
+  tar zxf mbcabinet.tar.gz
 
 .. include:: ../../includes/install/modules/remote_billing_modules.rst
 
@@ -23,7 +23,8 @@ DBUpdate
 
 .. code-block:: sh
 
-  ansible-playbook mbdbupdate.yml
+  ansible-playbook mbcabinet.yml
+
 
 .. include:: ../../footer_links.rst
 
@@ -32,4 +33,4 @@ DBUpdate
 	:maxdepth: 5
 	:titlesonly:
 
-	mbdbupdate/manual_install
+	mbcabinet/manual_install

@@ -1,4 +1,4 @@
-mbcore
+mbdaemoncore
 ###########################################
 
 Модуль используется для обработки Freeradius запросов (Access-Request/Accounting-Request) при авторизации абонентов.
@@ -10,7 +10,7 @@ mbcore
 .. code-block:: bash
 
     /var/bill
-    ├── mbcore
+    ├── mbdaemoncore
     │   ├── production
     │   │   ├── config
     │   │   │   └── config.xml
@@ -18,7 +18,7 @@ mbcore
     │   │   └── updates
     │   │       ├── kernel.current.checksum
     │   │       ├── kernel.downloaded.checksum
-    │   │       └── mbcore_update.sh
+    │   │       └── mbdaemoncore_update.sh
     │   └── testing
     │       ├── config
     │       │   └── config.xml
@@ -26,11 +26,11 @@ mbcore
     │       └── updates
     │           ├── kernel.current.checksum
     │           ├── kernel.downloaded.checksum
-    │           └── mbcore_testing.sh
+    │           └── mbdaemoncore_testing.sh
     ├── logs
-    │   ├── mbcore
-    │   │   ├── mbcore.debug
-    │   │   ├── mbcore.log
+    │   ├── mbdaemoncore
+    │   │   ├── mbdaemoncore.debug
+    │   │   ├── mbdaemoncore.log
     │   │   └── update.log
 
 Описание директорий и файлов
@@ -44,11 +44,11 @@ mbcore
      - описание
    * - /var/bill
      - домашняя директория биллинга
-   * - /var/bill/mbcore
+   * - /var/bill/mbdaemoncore
      - домашняя директория модуля
-   * - /var/bill/mbcore/production
+   * - /var/bill/mbdaemoncore/production
      - production версия модуля
-   * - /var/bill/mbcore/testing
+   * - /var/bill/mbdaemoncore/testing
      - testing версия модуля
    * - /var/bill/backup/mbsql
      - директория для бекапов
@@ -56,19 +56,19 @@ mbcore
      - файл конфига модуля
    * - <version>/update
      - директория с файлами обновления
-   * - <version>/update/mbcore_update.sh
+   * - <version>/update/mbdaemoncore_update.sh
      - загрузчик и установщик обновлений
    * - <version>/update/kernel.current.checksum
      - файл с md5 суммой текущей версии обновлений
    * - <version>/update/kernel.downloaded.checksum
      - файл с md5 суммой загруженной версии обновлений
-   * - /var/bill/logs/mbcore
+   * - /var/bill/logs/mbdaemoncore
      - директория логов модуля
-   * - /var/bill/logs/mbcore/mbcore.log
+   * - /var/bill/logs/mbdaemoncore/mbdaemoncore.log
      - основной лого модуля
-   * - /var/bill/logs/mbcore/debug.log
+   * - /var/bill/logs/mbdaemoncore/debug.log
      - debug лог модуля
-   * - /var/bill/logs/mbcore/update.log
+   * - /var/bill/logs/mbdaemoncore/update.log
      - лог обновлений модуля
 
 .. include:: ../includes/config/mbcore.rst

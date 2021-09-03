@@ -1,4 +1,4 @@
-mbpaygw
+mbhookpaygw
 ###########################################
 
 Модуль приема платежей
@@ -12,8 +12,8 @@ mbpaygw
 
 .. code-block:: bash
 
-  wget http://setup.multi-billing.pro/mbpaygw.tar.gz
-  tar zxf mbpaygw.tar.gz
+  wget http://setup.multi-billing.pro/mbhookpaygw.tar.gz
+  tar zxf mbhookpaygw.tar.gz
 
 .. include:: ../../includes/install/modules/remote_billing_modules.rst
 
@@ -23,7 +23,7 @@ mbpaygw
 
 .. code-block:: sh
 
-  ansible-playbook mbpaygw.yml
+  ansible-playbook mbhookpaygw.yml
 
 
 .. include:: ../../footer_links.rst

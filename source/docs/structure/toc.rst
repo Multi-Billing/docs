@@ -1,28 +1,44 @@
 Структура биллинга
 ###########################################
 
+Логическая структура биллинга
+
+.. image:: ../../_static/structure_diagram.png
+
+Файловая структура биллинга
+
 .. code-block:: bash
 
 	/var/bill/
 	├── backup
 	│   ├── mbadmin
+	│   ├── mbcabinet
 	│   ├── mbcabapi
 	│   ├── mbsql
 	│   ├── mbcore
 	│   ├── mbpaygw
 	│   ├── mbcron
-	│   └── mbcabinet
+	│   ├── mbqueue
+	│   └── mbfinance
 	├── mrtg
 	├── license
 	├── logs
 	│   ├── mbadmin
+	│   ├── mbcabinet
 	│   ├── mbcabapi
 	│   ├── mbsql
 	│   ├── mbcore
 	│   ├── mbpaygw
 	│   ├── mbcron
-	│   └── mbcabinet
+	│   ├── mbqueue
+	│   └── mbfinance
 	├── mbadmin
+	│   ├── chroot
+	│   │   ├── production
+	│   │   └── testing
+	│   ├── production
+	│   └── testing
+	├── mbcabinet
 	│   ├── chroot
 	│   │   ├── production
 	│   │   └── testing
@@ -49,13 +65,12 @@
 	├── mbcron
 	│   ├── production
 	│   └── testing
-	├── mbcabinet
-	│   ├── chroot
-	│   │   ├── production
-	│   │   └── testing
+	├── mbqueue
 	│   ├── production
 	│   └── testing
-
+	├── mbfinance
+	│   ├── production
+	│   └── testing
 
 Описание директорий
 *******************************************
@@ -92,12 +107,17 @@
     :doc:`/var/bill/mbpaygw <mbpaygw>`
         Директория модуля приема платежей, имеет chroot среду и production/testing версии модуля
 
+    :doc:`/var/bill/mbfinance <mbfinance>`
+        Директория модуля обработки платежей, имеет production/testing версии модуля
+
     :doc:`/var/bill/mbcron <mbcron>`
-        Директория модуля заданий и выполнения заданий очереди, имеет production/testing версии модуля
+        Директория модуля заданий по расписаню, имеет production/testing версии модуля
 
     :doc:`/var/bill/mbcabinet <mbcabinet>`
         Директория модуля Личного кабинета пользователей, имеет chroot среду и production/testing версии модуля
 
+    :doc:`/var/bill/mbqueue <mbqueue>`
+        Директория модуля выполнений заданий очереди, имеет production/testing версии модуля
 
 .. toctree::
 	:hidden:
@@ -109,8 +129,10 @@
 	mbradius
 	mbcore
 	mbcron
+	mbqueue
 	mbadmin
 	mbpaygw
+	mbfinance
 	mbcabinet
 	mbcabapi
 

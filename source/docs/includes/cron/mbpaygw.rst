@@ -1,7 +1,7 @@
 Задания cron
 *************************************************
 
-- Файл с заданиями модуля расположен по пути ``/etc/cron.d/mbpaygw`` и содержит задания
+- Файл с заданиями модуля расположен по пути ``/etc/cron.d/mbhookpaygw`` и содержит задания
 
   * запуск обновления production версии модуля
 
@@ -19,4 +19,4 @@
     # *  *  *  *  * user-name  command to be executed
 
     # update
-    05 6 * * * root /var/bill/mbpaygw/production/updates/mbpaygw_update.sh
+    05 6 * * * root /var/bill/mbhookpaygw/production/updates/mbhookpaygw_update.sh

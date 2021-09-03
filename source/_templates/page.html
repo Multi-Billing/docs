@@ -3,6 +3,7 @@
 {% block footer %}
 <script type="text/javascript">
     $(document).ready(function() {
+        $("a[href^='http']").attr('target','_blank');
         $(".toggle > *").hide();
         $(".toggle .header").show();
         $(".toggle .header").click(function() {

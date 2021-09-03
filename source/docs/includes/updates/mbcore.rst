@@ -1,7 +1,7 @@
 Загрузщик обновлений
 *************************************************
 
-Варианты запуска файла ``/var/bill/mbcore/<version>/updates/mbcore_update.sh``
+Варианты запуска файла ``/var/bill/mbdaemoncore/<version>/updates/mbdaemoncore_update.sh``
 
 .. list-table:: 
    :widths: 100 100

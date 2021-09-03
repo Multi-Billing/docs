@@ -1,19 +1,14 @@
 Настройка модуля MBRadius
 ###########################################
 
-Посмотрим на конфигурацию radius (**radiusd.conf**)
+Посмотрим на конфигурацию radius
 
-.. container:: toggle
-
-    .. container:: header
-
-        .. raw:: html
-
-            <button>Show/Hide Config</button>
+.. dropdown:: :fa:`eye,mr-1` **radiusd.conf**
+    :animate: fade-in
 
     .. code-block:: bash
-      :emphasize-lines: 16-18,58-63
-      :linenos:
+        :emphasize-lines: 16-18,58-63
+        :linenos:
 
         prefix = /usr
         exec_prefix = /usr
@@ -142,7 +137,7 @@
         Максимальное кол-во запросов которое может обработать один поток, после чего он будет перезапущен ( 0 - без ограничения )
 
     max_queue_size
-        Размер очереди для запросов авторизации
+        Размер очереди для запросов авторизации (1048576 это максимальное значение, при таком значении радиус потербляет на ~1Gb больше памяти)
 
     auto_limit_acct
         Ограничение accounting запросов
@@ -192,17 +187,19 @@ mbcore автоматически создает дочерний процесс
 
 ``capinfos`` доступен из пакета ``wireshark`` по этому для установки выполним
 
-Для Centos:
+.. tabs::
 
-.. code-block:: bash
+   .. tab:: Centos
 
-  dnf install tcpdump wireshark
+      .. code-block:: bash
 
-Для Debian:
+        dnf install tcpdump wireshark
 
-.. code-block:: bash
+   .. tab:: Debian
 
-  apt-get install tcpdump wireshark
+      .. code-block:: bash
+
+        apt-get install tcpdump wireshark
 
 **Определение pps**
 ===========================================
@@ -211,7 +208,7 @@ mbcore автоматически создает дочерний процесс
 
 .. code-block:: bash
 
-  tcpdump -i eth1 dst port 1812 -w /tmp/radius_pps.pcap
+  tcpdump -i eth1 dst port 1812 or 1813 -w /tmp/radius_pps.pcap
 
 Для записи будет достаточно 5-10 минут (что бы успел пройти accounting интервал)
 

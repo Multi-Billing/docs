@@ -1,7 +1,7 @@
 Файл конфигурации
 *************************************************
 
-Файл расположен по пути ``/var/bill/mbpaygw/<version>/config/config.xml``
+Файл расположен по пути ``/var/bill/mbhookpaygw/<version>/config/config.xml``
 
 .. code-block:: xml
 
@@ -16,8 +16,8 @@
         <timezone>Europe/Kiev</timezone>
         <partialUTF8>false</partialUTF8>
         <debug>false</debug>
-        <error_log>/var/bill/logs/mbadmin.log</error_log>
-        <debug_log>/var/bill/logs/mbadmin.debug</debug_log>
+        <error_log>/var/bill/logs/general.log</error_log>
+        <debug_log>/var/bill/logs/debug.log</debug_log>
       </parameters>
     </config>
 

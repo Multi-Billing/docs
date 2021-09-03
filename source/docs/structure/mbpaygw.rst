@@ -1,4 +1,4 @@
-mbpaygw
+mbhookpaygw
 ###########################################
 
 Модуль приема платежей
@@ -9,7 +9,7 @@ mbpaygw
 .. code-block:: bash
 
     /var/bill
-    ├── mbpaygw
+    ├── mbhookpaygw
     │   ├── chroot
     │   │   ├── production
     │   │   │   ├── bin -> usr/bin
@@ -31,15 +31,15 @@ mbpaygw
     │   │   │   │       └── zoneinfo
     │   │   │   └── var
     │   │   │       ├── bill
-    │   │   │       │   ├── config -> /var/bill/mbpaygw/production/config
-    │   │   │       │   └── logs -> /var/bill/logs/mbpaygw
+    │   │   │       │   ├── config -> /var/bill/mbhookpaygw/production/config
+    │   │   │       │   └── logs -> /var/bill/logs/mbhookpaygw
     │   │   │       ├── lib
     │   │   │       │   └── php
     │   │   │       │       └── session
     │   │   │       ├── log
     │   │   │       │   └── php-fpm
     │   │   │       └── www
-    │   │   │           └── mbpaygw
+    │   │   │           └── mbhookpaygw
     │   │   │               └── index.php
     │   │   └── testing
     │   │       ├── bin -> usr/bin
@@ -61,15 +61,15 @@ mbpaygw
     │   │       │       └── zoneinfo
     │   │       └── var
     │   │           ├── bill
-    │   │           │   ├── config -> /var/bill/mbpaygw/testing/config
-    │   │           │   └── logs -> /var/bill/logs/mbpaygw
+    │   │           │   ├── config -> /var/bill/mbhookpaygw/testing/config
+    │   │           │   └── logs -> /var/bill/logs/mbhookpaygw
     │   │           ├── lib
     │   │           │   └── php
     │   │           │       └── session
     │   │           ├── log
     │   │           │   └── php-fpm
     │   │           └── www
-    │   │               └── mbpaygw
+    │   │               └── mbhookpaygw
     │   │                   └── index.php
     │   ├── production
     │   │   ├── add_to_chroot.sh
@@ -78,9 +78,9 @@ mbpaygw
     │   │   ├── public
     │   │   │   └── index.php
     │   │   └── updates
-    │   │       ├── mbpaygw.current.checksum
-    │   │       ├── mbpaygw.downloaded.checksum
-    │   │       └── mbpaygw_update.sh
+    │   │       ├── mbhookpaygw.current.checksum
+    │   │       ├── mbhookpaygw.downloaded.checksum
+    │   │       └── mbhookpaygw_update.sh
     │   └── testing
     │       ├── add_to_chroot.sh
     │       ├── config
@@ -88,13 +88,13 @@ mbpaygw
     │       ├── public
     │       │   └── index.php
     │       └── updates
-    │           ├── mbpaygw.current.checksum
-    │           ├── mbpaygw.downloaded.checksum
-    │           └── mbpaygw_testing.sh
+    │           ├── mbhookpaygw.current.checksum
+    │           ├── mbhookpaygw.downloaded.checksum
+    │           └── mbhookpaygw_testing.sh
     ├── logs
-    │   ├── mbpaygw
-    │   │   ├── mbpaygw.debug
-    │   │   ├── mbpaygw.log
+    │   ├── mbhookpaygw
+    │   │   ├── mbhookpaygw.debug
+    │   │   ├── mbhookpaygw.log
     │   │   └── update.log
 
 Описание директорий и файлов
@@ -106,20 +106,20 @@ mbpaygw
 
    * - файл/директория
      - описание
-   * - /var/bill/mbpaygw/chroot/<version>
+   * - /var/bill/mbhookpaygw/chroot/<version>
      - корневая директория chroot среды
    * - chroot/<version>/var/bill/contrib
      - примонтированная директория системы /var/bill/contrib
    * - chroot/<version>/var/bill/config
-     - примонтированная директория системы /var/bill/mbpaygw/<version>/config
+     - примонтированная директория системы /var/bill/mbhookpaygw/<version>/config
    * - chroot/<version>/var/bill/logs
-     - примонтированная директория системы /var/bill/logs/mbpaygw
-   * - chroot/<version>/var/www/mbpaygw
-     - примонтированная директория системы /var/bill/mbpaygw/<version>/public
-   * - /var/bill/mbpaygw/<version>/add_to_chroot.sh
+     - примонтированная директория системы /var/bill/logs/mbhookpaygw
+   * - chroot/<version>/var/www/mbhookpaygw
+     - примонтированная директория системы /var/bill/mbhookpaygw/<version>/public
+   * - /var/bill/mbhookpaygw/<version>/add_to_chroot.sh
      - скрипт для добавления программ в изолированную chroot среду
 
-.. list-table:: модуль mbpaygw
+.. list-table:: модуль mbhookpaygw
    :widths: 100 100
    :header-rows: 1
 
@@ -127,14 +127,14 @@ mbpaygw
      - описание
    * - /var/bill
      - домашняя директория биллинга
-   * - /var/bill/mbpaygw
+   * - /var/bill/mbhookpaygw
      - домашняя директория модуля
-   * - /var/bill/mbpaygw/production
+   * - /var/bill/mbhookpaygw/production
      - production версия модуля
-   * - /var/bill/mbpaygw/testing
+   * - /var/bill/mbhookpaygw/testing
      - testing версия модуля
    * - <version>/backup
-     - директория для бекапов (подключена из /var/bill/backup/mbpaygw)
+     - директория для бекапов (подключена из /var/bill/backup/mbhookpaygw)
    * - <version>/config/config.xml
      - файл конфига модуля
    * - <version>/public
@@ -143,19 +143,19 @@ mbpaygw
      - файл с кодом модуля
    * - <version>/updates
      - директория с файлами обновления
-   * - <version>/updates/mbpaygw_update.sh
+   * - <version>/updates/mbhookpaygw_update.sh
      - загрузчик и установщик обновлений
-   * - <version>/updates/mbpaygw.current.checksum
+   * - <version>/updates/mbhookpaygw.current.checksum
      - файл с md5 суммой текущей версии обновлений
-   * - <version>/updates/mbpaygw.downloaded.checksum
+   * - <version>/updates/mbhookpaygw.downloaded.checksum
      - файл с md5 суммой загруженной версии обновлений
-   * - /var/bill/logs/mbpaygw
+   * - /var/bill/logs/mbhookpaygw
      - директория логов модуля
-   * - /var/bill/logs/mbpaygw/mbpaygw.log
+   * - /var/bill/logs/mbhookpaygw/mbhookpaygw.log
      - основной лог модуля
-   * - /var/bill/logs/mbpaygw/debug.log
+   * - /var/bill/logs/mbhookpaygw/debug.log
      - debug лог модуля
-   * - /var/bill/logs/mbpaygw/update.log
+   * - /var/bill/logs/mbhookpaygw/update.log
      - лог обновлений модуля
 
 .. include:: ../includes/config/mbpaygw.rst

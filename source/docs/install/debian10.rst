@@ -12,12 +12,19 @@
 
 Модули биллинга:
 
-* mbadmin
-* mbcabinet
-* mbcore
-* mbsql
-* mbcron
-* mbpaygw
+* :doc:`mbadmin <../structure/mbadmin>`
+* :doc:`mbcabinet <../structure/mbcabinet>`
+* :doc:`mbsql <../structure/mbsql>`
+* :doc:`mbcron <../structure/mbcron>`
+* :doc:`mbhookpaygw <../structure/mbpaygw>`
+* :doc:`mbdaemoncore <../structure/mbcore>`
+* :doc:`mbdaemonqueue <../structure/mbqueue>`
+* :doc:`mbdaemonfinance <../structure/mbfinance>`
+* mbdaemonfiscalization
+* mbdaemonmessenger
+* mbdaemonnotify
+* mbdaemonbot
+* mbdaemontv
 
 А так же вспомогательные пакеты вместе с их зависимостями:
 

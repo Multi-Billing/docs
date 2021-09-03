@@ -1,4 +1,4 @@
-mbcore
+mbdaemoncore
 ###########################################
 
 Модуль используется для обработки Freeradius запросов (Access-Request/Accounting-Request) при авторизации абонентов.
@@ -12,8 +12,8 @@ mbcore
 
 .. code-block:: bash
 
-  wget http://setup.multi-billing.pro/mbcore.tar.gz
-  tar zxf mbcore.tar.gz
+  wget http://setup.multi-billing.pro/mbdaemoncore.tar.gz
+  tar zxf mbdaemoncore.tar.gz
 
 .. include:: ../../includes/install/modules/remote_billing_modules.rst
 
@@ -23,7 +23,7 @@ mbcore
 
 .. code-block:: sh
 
-  ansible-playbook mbcore.yml
+  ansible-playbook mbdaemoncore.yml
 
 
 .. include:: ../../footer_links.rst

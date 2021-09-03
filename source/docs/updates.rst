@@ -33,18 +33,18 @@
    * - mbadmin - frontend
      - `mbadmin_frontend_update.sh <http://free.update.multi-billing.pro/mbadmin_frontend_update.sh>`_
      - `mbadmin_frontend_testing.sh <http://free.current.multi-billing.pro/mbadmin_frontend_testing.sh>`_
-   * - mbcore
-     - `mbcore_update.sh <http://free.update.multi-billing.pro/mbcore_update.sh>`_
-     - `mbcore_testing.sh <http://free.current.multi-billing.pro/mbcore_testing.sh>`_
+   * - mbdaemoncore
+     - `mbdaemoncore_update.sh <http://free.update.multi-billing.pro/mbdaemoncore_update.sh>`_
+     - `mbdaemoncore_testing.sh <http://free.current.multi-billing.pro/mbdaemoncore_testing.sh>`_
    * - mbsql
      - `mbsql_update.sh <http://free.update.multi-billing.pro/mbsql_update.sh>`_
      - `mbsql_testing.sh <http://free.current.multi-billing.pro/mbsql_testing.sh>`_
    * - mbcron
      - `mbcron_update.sh <http://free.update.multi-billing.pro/mbcron_update.sh>`_
      - `mbcron_testing.sh <http://free.current.multi-billing.pro/mbcron_testing.sh>`_
-   * - mbpaygw
-     - `mbpaygw_update.sh <http://free.update.multi-billing.pro/mbpaygw_update.sh>`_
-     - `mbpaygw_testing.sh <http://free.current.multi-billing.pro/mbpaygw_testing.sh>`_
+   * - mbhookpaygw
+     - `mbhookpaygw_update.sh <http://free.update.multi-billing.pro/mbhookpaygw_update.sh>`_
+     - `mbhookpaygw_testing.sh <http://free.current.multi-billing.pro/mbhookpaygw_testing.sh>`_
    * - mbcabapi
      - `mbcabapi_update.sh <http://free.update.multi-billing.pro/mbcabapi_update.sh>`_
      - `mbcabapi_testing.sh <http://free.current.multi-billing.pro/mbcabapi_testing.sh>`_

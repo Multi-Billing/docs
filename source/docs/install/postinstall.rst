@@ -81,3 +81,20 @@ ispnet.demo - домен "по умолчанию" при установке, е
 Админку можно открыть по домену (если настраивали) либо по IP адресу сервера через https протокол.
 
 При первом входе вас попросят изменить пароль.
+
+Логин и пароль после установки записываются в info файлы в директории /var/bill, посмотреть список info файлов можно выполнив:
+
+.. code-block:: sh
+
+    ls -lh /var/bill/*.info
+
+
+Внутри содержится информация о доступах созданных при установке (пример mbadmin.info):
+
+.. code-block:: sh
+
+    # BEGIN mbadmin web info
+    url_production= https://admin.ispnet.demo
+    url_testing= https://test.admin.ispnet.demo
+    login=admin
+    password=7pBhZ-t3YP-ofU90

@@ -35,7 +35,7 @@
 **Требования к серверу/ОС**
 *******************************************
 
-* Это должна быть чистая ОС на базе `netinst образа <https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.10.0-amd64-netinst.iso>`_ .
+* Это должна быть чистая ОС на базе `netinst образа <https://cdimage.debian.org/mirror/cdimage/archive/10.10.0/amd64/iso-cd/debian-10.10.0-amd64-netinst.iso>`_ .
 * Сервер должен соответствовать `минимальным требованиям <http://multi-billing.pro/produkt/mikbill-sys-requirements.html>`_ биллинга.
 * При установке OS **НИКОГДА** не ставте галочку возле "Системные часы используют UTC"
 

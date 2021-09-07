@@ -48,12 +48,13 @@
 
 .. code-block:: sh
 
-    deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
+    deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main
 
 После чего запустите команды:
 
 .. code-block:: sh
 
+    apt-get install gnupg2
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
     apt update
     apt install ansible wget
